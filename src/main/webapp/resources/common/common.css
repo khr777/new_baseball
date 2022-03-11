@@ -1,0 +1,20 @@
+@charset "UTF-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Sunflower:wght@700&display=swap');
+html, body {
+	font-family: 'Sunflower', sans-serif !important;
+} 
+
+html, body, a, ul, li, oi, img {
+	margin: 0;
+	padding: 0;
+	
+}
+
+.con {
+	max-width: 1000px;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+}
+
