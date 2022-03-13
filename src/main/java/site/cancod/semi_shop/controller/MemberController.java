@@ -2,6 +2,9 @@ package site.cancod.semi_shop.controller;
 
 import java.util.Map;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -14,6 +17,7 @@ import com.google.gson.Gson;
 
 import site.cancod.checkMe.util.Util;
 import site.cancod.semi_shop.service.MemberService;
+import site.cancod.semi_shop.vo.Member;
 
 @Controller
 public class MemberController {
@@ -45,9 +49,7 @@ public class MemberController {
 			return result;
 		}
 		
-		System.out.println("------1");
 		int checkLoginId = memberService.getCheckLoginId(loginId);
-		System.out.println("------2");
 		if ( checkLoginId > 0 ) {
 			result.put("result", "overlap");
 			return result;
@@ -70,5 +72,29 @@ public class MemberController {
 		return "member/login";
 	}
 	
+	@RequestMapping(value="/goLogin", method = RequestMethod.POST)
+	@ResponseBody
+	public ModelMap goLogin(@RequestParam Map<String, Object> params, HttpServletRequest request) {
+		ModelMap result = new ModelMap();
+		
+		String loginId = params.get("loginId") + "";
+		String loginPw = params.get("loginPw") + "";
+		
+		String realPw = Util.getSha256(loginPw);
+		
+		Member member = memberService.getMemberByLoginId(loginId);
+		
+		if ( !realPw.equals(member.getLoginPw()) ) {
+			result.put("result", "0");
+			return result;
+		}
+		
+		// 로그인 성공 처리
+	    HttpSession session = request.getSession();                         // 세션이 있으면 있는 세션 반환, 없으면 신규 세션을 생성하여 반환
+	    session.setAttribute("loginId", member.getSeq()); 
+		
+		result.put("result", "1");
+		return result;
+	}
 	
 }

@@ -11,6 +11,8 @@ jQuery(function(a) {
 	});
 
   });
+
+// 회원가입
 function signUp() {
 	var loginId = $('#loginId').val();
 	var loginPw = $('#loginPw').val();
@@ -143,12 +145,64 @@ function signUp() {
 			}
 	    },  error:function(request,status,error){
              alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
-          }
-   })
+         }
+   });
 	
 }
 
+// 이메일 형식 체크 
 function email_check(email) {
 	var regex = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
 	return regex.test(email);
+}
+
+// 로그인 
+function submitLogin() {
+	var loginId = $('#loginId').val();
+	var loginPw = $('#loginPw').val();
+	
+	if (loginId == '' || loginId == undefined) {
+		swal("아이디를 입력해주세요.", "", "error")
+		.then((value) => {
+			$('#loginId').focus();
+		});
+		return false;
+	}
+	
+	if (loginPw == '' || loginPw == undefined) {
+		swal("비밀번호를 입력해주세요.", "", "error")
+		.then((value) => {
+			$('#loginPw').focus();
+		});
+		return false;
+	}
+	
+	$.ajax({
+	type: "POST",
+	url: "/goLogin",
+	// contentType:'application/json; charset=utf-8', // Controller 에서 POST 로 받으려면 입력 X 
+	dataType: 'json',
+	data: {
+		"loginId" : loginId,
+		"loginPw" : loginPw
+	},
+	success: function(data){
+	    if ( data.result == '1') {
+			swal("로그인 되었습니다.", "", "success")
+			.then((value) => {
+				location.replace('/time_check');
+			});
+		} else {
+			swal("비밀번호를 다시 입력해주세요.", "", "error")
+			.then((value) => {
+				$('#loginPw').focus();
+			});
+		}
+	},  error:function(request,status,error){
+	     alert("code:"+request.status+"\n"+"message:"+request.responseText+"\n"+"error:"+error);
+	 }
+	});	
+	
+		
+	
 }

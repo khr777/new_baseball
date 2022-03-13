@@ -8,6 +8,7 @@
 <link rel="stylesheet" type="text/css" href="/resources/bootstrap/css/bootstrap.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="/resources/bootstrap/js/bootstrap.js"></script>
+<script src="/resources/js/time_check.js"></script>
 <title>time_check page</title>
 
 <style>
@@ -38,17 +39,25 @@
 	border-radius: 15px !important;
 }
 
+.time_box .time #currTime {
+	margin-top: 150px;
+}
+
 </style>
 </head>
 <body>
+	<jsp:include page="/WEB-INF/jsp/header.jsp"></jsp:include>
 	<div class="con">
 		<div class="time_box">
 			<div class="title shadow p-3 mb-5 bg-body rounded check">
 				공부 시간
 			</div>
 			<div class="time shadow p-3 mb-5 bg-body rounded check">
-				<button class="shadow-sm p-3 mb-5 bg-body rounded">START</button>
+				<button class="shadow-sm p-3 mb-5 bg-body rounded" id="btn_start" onclick="timeStart();">START</button>
+				<div id="startTime"></div>
+				<div id="currTime"></div>
 			</div>
+			
 		</div>
 	</div>
 </body>

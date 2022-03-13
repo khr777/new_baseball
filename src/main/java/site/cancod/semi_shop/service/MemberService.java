@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import site.cancod.semi_shop.dao.MemberDao;
+import site.cancod.semi_shop.vo.Member;
 
 @Service
 public class MemberService {
@@ -17,6 +18,10 @@ public class MemberService {
 
 	public int getCheckLoginId(String loginId) {
 		return memberDao.getCheckLoginId(loginId);
+	}
+
+	public Member getMemberByLoginId(String loginId) {
+		return memberDao.getMemberByLoginId(loginId);
 	}
 
 	

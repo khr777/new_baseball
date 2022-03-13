@@ -18,5 +18,11 @@
     	FROM Member
     	WHERE loginId = #{loginId}
     </select>
+    
+    <select  id="getMemberByLoginId" resultType="Member">
+    	SELECT *
+    	FROM Member
+    	WHERE loginId = #{loginId}
+    </select>
 	
 </mapper>

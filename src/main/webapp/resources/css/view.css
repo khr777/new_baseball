@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+.con {
+}
+
+/* 타이네임 만들기 시작 */
+.timeBox {
+	margin-top: 150px;
+	width: 50%;	
+	margin-left: auto;
+	margin-right: auto;
+	padding: 20px !important;
+}
+
+.timeBox .timeNameTitle {
+	margin: 10px 0 30px 0;
+}
+
+.timeBox .timeContent {
+	margin:60px 0 !important;
+}
+
+.timeBox .btn_box {
+	margin-top: 30px;
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	display: flex;
+	justify-content: space-around;
+}
+
+.timeBox .btn_box .btn_submit {
+	width: 50%;
+}
+
+/* 타이네임 만들기 끝 */
+
+/* 타이네임 리스트 시작 */
+.titleBox {
+	margin-top: 50px;
+}
+/* 타이네임 리스트 끝 */

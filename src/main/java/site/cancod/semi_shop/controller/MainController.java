@@ -1,12 +1,29 @@
 package site.cancod.semi_shop.controller;
 
+import java.util.Map;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+
+import site.cancod.checkMe.util.Util;
+import site.cancod.semi_shop.service.TimeService;
+import site.cancod.semi_shop.vo.Member;
 
 @Controller
 public class MainController {
 	
+	@Autowired
+	private TimeService timeService;
+
 	@RequestMapping(value="/{action}")
 	public String join(@PathVariable String action) {	
 		String path = "view/" + action;
@@ -20,4 +37,22 @@ public class MainController {
 		*/
 		return path;	
 	}
+	
+	@RequestMapping(value="/goMakeTime", method = RequestMethod.POST)
+	@ResponseBody
+	public ModelMap goMakeTime(@RequestParam Map<String, Object> params, HttpServletRequest request) {
+		ModelMap result = new ModelMap();
+		
+		String timeName = params.get("timeName") + "";
+		String userId = request.getAttribute("loginId") + "";
+		
+		int insertResult = timeService.insertTimeName(timeName, userId);
+		
+		
+		
+		
+		result.put("result", "1");
+		return result;
+	}
+	
 }
