@@ -39,7 +39,7 @@
 }
 /* 회원가입 끝 */
 
-/* 로그 시작 */
+/* 로그인 시작 */
 .login_box {
 	margin-top: 150px;
 	display: flex;
@@ -65,10 +65,15 @@
 	align-items: center;
 }
 
-.login_box .login_btn_box button {
+.login_box .login_btn_box button{
 	width: 50%;
 	margin: 10px 0;
 }
+
+.login_box .login_btn_box a {
+	width: 5%;
+	margin: 10px 0;
+} 
 
 .login_footer_title {
 	font-weight: bold;

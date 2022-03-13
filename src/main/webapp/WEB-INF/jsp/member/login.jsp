@@ -37,7 +37,7 @@
 			
 			<div class="login_btn_box">
 				<button type="button" class="btn btn-primary">login</button>
-				<button type="button" class="btn btn-success" onclick="location.href='./join'">join</button>
+				<a href="./join">join</a>
 			</div>
 		</div>
 		
@@ -45,5 +45,6 @@
 				Start your life 
 		</div>
 	</div>
+	<jsp:include page="/WEB-INF/jsp/footer.jsp"></jsp:include>
 </body>
 </html>		
