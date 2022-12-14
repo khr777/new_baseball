@@ -1,10 +1,10 @@
-package site.cancod.semi_shop.service;
+package site.cancod.checkMe.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import site.cancod.semi_shop.dao.MemberDao;
-import site.cancod.semi_shop.vo.Member;
+import site.cancod.checkMe.dao.MemberDao;
+import site.cancod.checkMe.vo.Member;
 
 @Service
 public class MemberService {

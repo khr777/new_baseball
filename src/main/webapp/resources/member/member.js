@@ -190,7 +190,7 @@ function submitLogin() {
 	    if ( data.result == '1') {
 			swal("로그인 되었습니다.", "", "success")
 			.then((value) => {
-				location.replace('/time_check');
+				location.replace('/timeNameList');
 			});
 		} else {
 			swal("비밀번호를 다시 입력해주세요.", "", "error")

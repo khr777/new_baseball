@@ -1,4 +1,4 @@
-package site.cancod.semi_shop.vo;
+package site.cancod.checkMe.vo;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

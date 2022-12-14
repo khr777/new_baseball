@@ -1,4 +1,4 @@
-package site.cancod.semi_shop.controller;
+package site.cancod.checkMe.controller;
 
 import java.util.Map;
 
@@ -15,9 +15,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.google.gson.Gson;
 
+import site.cancod.checkMe.service.MemberService;
 import site.cancod.checkMe.util.Util;
-import site.cancod.semi_shop.service.MemberService;
-import site.cancod.semi_shop.vo.Member;
+import site.cancod.checkMe.vo.Member;
 
 @Controller
 public class MemberController {

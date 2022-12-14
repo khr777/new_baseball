@@ -11,4 +11,10 @@
         create_time = NOW()
     </insert>
     
+    <select  id="getAllTimeNameList" resultType="arraylist">
+    	SELECT *
+    	FROM TimeName
+    	WHERE userId = #{userId}
+    </select>
+    
 </mapper>

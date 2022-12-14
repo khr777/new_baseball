@@ -1,9 +1,9 @@
-package site.cancod.semi_shop.dao;
+package site.cancod.checkMe.dao;
 
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
-import site.cancod.semi_shop.vo.Member;
+import site.cancod.checkMe.vo.Member;
 
 @Mapper
 public interface MemberDao {

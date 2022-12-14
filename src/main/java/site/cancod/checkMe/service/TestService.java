@@ -1,12 +1,12 @@
-package site.cancod.semi_shop.service;
+package site.cancod.checkMe.service;
 
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import site.cancod.semi_shop.dao.TestDao;
-import site.cancod.semi_shop.vo.Article;
+import site.cancod.checkMe.dao.TestDao;
+import site.cancod.checkMe.vo.Article;
 
 @Service
 public class TestService {

@@ -1,5 +1,6 @@
-package site.cancod.semi_shop.controller;
+package site.cancod.checkMe.controller;
 
+import java.util.List;
 import java.util.Map;
 
 import javax.servlet.http.HttpServletRequest;
@@ -14,9 +15,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import site.cancod.checkMe.service.TimeService;
 import site.cancod.checkMe.util.Util;
-import site.cancod.semi_shop.service.TimeService;
-import site.cancod.semi_shop.vo.Member;
+import site.cancod.checkMe.vo.Member;
+import site.cancod.checkMe.vo.TimeName;
 
 @Controller
 public class MainController {
@@ -47,6 +49,23 @@ public class MainController {
 		String userId = request.getAttribute("loginId") + "";
 		
 		int insertResult = timeService.insertTimeName(timeName, userId);
+		
+		
+		
+		result.put("result", "1");
+		return result;
+	}
+	
+	@RequestMapping(value="/getTimeNameList", method = RequestMethod.POST)
+	@ResponseBody
+	public ModelMap getTimeNameList(@RequestParam Map<String, Object> params, HttpServletRequest request) {
+		ModelMap result = new ModelMap();
+		
+		String userId = request.getAttribute("loginId") + "";
+		
+		System.out.println("userId : " + userId);
+		
+		List<TimeName> timeNameList = timeService.getAllTimeNameList(userId);
 		
 		
 		
