@@ -1,4 +1,4 @@
-package site.cancod.checkMe;
+package site.canco.baseball;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

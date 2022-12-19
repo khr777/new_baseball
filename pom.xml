@@ -8,16 +8,23 @@
 		<version>2.5.4</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>site.cancod.semi_shop</groupId>
-	<artifactId>semi_shop</artifactId>
+	<groupId>baseball</groupId>
+	<artifactId>baseball</artifactId>
 	<version>1</version>
 	<packaging>war</packaging>
-	<name>semi_shop</name>
-	<description>for my mom&apos;s store</description>
+	<name>baseball</name>
+	<description>baseball</description>
 	<properties>
 		<java.version>1.8</java.version>
 	</properties>
 	<dependencies>
+	
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-tomcat</artifactId>
+			<scope>provided</scope>
+		</dependency>
 	
 		<!-- 객체를 json으로, json을 객체로 사용하기 위함 -->
 		<dependency>
@@ -39,6 +46,8 @@
 			<groupId>mysql</groupId>
 			<artifactId>mysql-connector-java</artifactId>
 		</dependency>
+		
+		
 	
 		<!-- JSP 파일을 사용/연동하기 위함 -->
 		<dependency>
@@ -46,7 +55,6 @@
 	   		<artifactId>tomcat-embed-jasper</artifactId>
 	  		<scope>provided</scope>
 		</dependency>
-	
 		<!-- JSP 파일에서 데이터 가공을 쉽게할 수 있는 문법을 쓰기 위함 -->
 		<dependency>
 		    <groupId>javax.servlet</groupId>
@@ -71,20 +79,16 @@
 		</dependency>
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-tomcat</artifactId>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
-			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
-		
+		<!--  -->
 		<dependency>
 		  <groupId>org.bgee.log4jdbc-log4j2</groupId>
 		  <artifactId>log4jdbc-log4j2-jdbc4.1</artifactId>
 		  <version>1.16</version>
 		</dependency>
+		
 	</dependencies>
 
 	<build>

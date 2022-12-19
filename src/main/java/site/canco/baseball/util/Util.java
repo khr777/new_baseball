@@ -1,4 +1,4 @@
-package site.cancod.checkMe.util;
+package site.canco.baseball.util;
 
 import java.security.MessageDigest;
 

@@ -1,12 +1,11 @@
-package site.cancod.checkMe.service;
+package site.canco.baseball.service;
 
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import site.cancod.checkMe.dao.TestDao;
-import site.cancod.checkMe.vo.Article;
+import site.canco.baseball.dao.TestDao;
 
 @Service
 public class TestService {
@@ -14,7 +13,7 @@ public class TestService {
 	@Autowired
 	private TestDao testDao;
 
-	public Article getData() {
+	public Map<String, Object> getData() {
 		return testDao.getData();
 	}
 

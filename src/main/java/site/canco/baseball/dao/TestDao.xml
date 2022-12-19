@@ -2,13 +2,12 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
   
-<mapper namespace="site.cancod.semi_shop.dao.TestDao">
+<mapper namespace="site.canco.baseball.dao.TestDao">
 
 	<!-- <select id="getData" resultType="site.cancod.semi_shop.vo.Article"> -->
-	<select id="getData" resultType="Article">
+	<select id="getData" resultType="java.util.Map">
 		SELECT *
-		FROM Article
-		WHERE id = 1;
+		FROM lo;
 	</select>
 	
 </mapper>

@@ -1,6 +1,6 @@
 server:
-  port: 8085
-  address: 54.180.154.136
+  port: 8086
+  #address: 54.180.154.136
 spring:
   datasource:
     url: jdbc:log4jdbc:mysql://localhost:3306/test?serverTimezone=UTC&characterEncoding=UTF-8
@@ -22,6 +22,6 @@ spring:
       prefix: /WEB-INF/jsp/
       suffix: .jsp
      # static-path-pattern: /resources/**
-mybatis:
-  type-aliases-package: site.cancod.semi_shop.vo
+
+  
   

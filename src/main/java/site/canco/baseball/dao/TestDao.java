@@ -1,14 +1,12 @@
-package site.cancod.checkMe.dao;
+package site.canco.baseball.dao;
 
 import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import site.cancod.checkMe.vo.Article;
-
 @Mapper
 public interface TestDao {
 
-	Article getData();
+	Map<String, Object> getData();
 
 }

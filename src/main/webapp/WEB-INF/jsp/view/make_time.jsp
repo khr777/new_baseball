@@ -24,7 +24,7 @@
 	<jsp:include page="/WEB-INF/jsp/header.jsp"></jsp:include>
 	<div class="con">
 		<div class="timeBox shadow p-3 mb-5 bg-white rounded">
-			<div class="timeNameTitle">나만의 시간 만들기</div>
+			<div class="timeNameTitle">나만의 시간 만들기(BASEBALL TEST)</div>
 			<div class="timeContent">
 				<div class="input-group mb-3">
 					<div class="input-group-prepend">
