@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<!-- 관련 Namespace 선언 및 layout:decorate 추가 -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/default_layout}">
+	<head>
+	<!-- layout.html 에 들어간 head 부분을 제외하고 개별 파일에만 적용되는 head 부분 추가 -->
+	<!-- ============================================ -->
+	<!-- title 태그를 공통으로 사용할 수 있는 방법 모색 --> 
+	<!-- ============================================ -->
+	<title>BASEBALL CHALLENGE</title>
+	<link href="/static/css/change_header.css"  th:href="@{/static/css/change_header.css}" rel="stylesheet" />
+	
+	
+	<!-- 필요하다면 개별 파일에 사용될 css/js 선언  -->
+	<style>
+
+	</style>
+	</head>
+	
+	<!-- layout.html에 정의한 main page 부분 -->
+	<body layout:fragment="body">
+		<!-- code -->
+		
+		<div class="game-contents-box default-contents wrap">
+			<div class="game-contents-header">
+				<div class="answer-box">
+					<span class="answer-el answer-1">?</span>
+					<span class="answer-el answer-2">?</span>
+					<span class="answer-el answer-3">?</span>
+				</div>
+				<div class="round-box">
+					<div class="round-box-flex round-box-1">
+						<div class="current-round"><span>3</span> round</div>
+					</div>
+					<div class="round-box-flex round-box-2">
+						<div class="entered-number entered-number-1">2</div>
+						<div class="entered-number entered-number-2"></div>
+						<div class="entered-number entered-number-3"></div>
+					</div>
+				</div>
+				<div class="score-nickname-box">
+					<div class="score-box">
+						<div class="score-title">turn</div>
+						<div class="try-score size-up">5</div>
+						<div class="sl size-up">/</div>
+						<div class="current-score size-up">3</div>
+					</div>
+					<div class="game-nickname-box">
+						<div class="nickname-title">NickName</div>
+						<div class="user-nickname">yongja_nunna</div>
+					</div>
+				</div>
+				
+			</div>
+			<div class="game-box">
+				<div class="total-round-5">
+					<div class="round-1 round-box">
+						<div class="round game-el">
+							<span class="el-round">1 round</span>
+						</div>
+						<div class="number game-el">
+							<span class="el-number">2</span>
+							<span class="el-number">5</span>
+							<span class="el-number">8</span>
+							<!-- ball 5개 너비 체크용 
+								<span>3</span>
+								<span>1</span> 
+							-->
+						</div>
+						<div class="matching game-el">
+							<span  class="el-matching" name="strike">1S</span>
+							<span  class="el-matching" name="ball">1B</span>
+						</div>
+					</div>
+					<div class="round-2 round-box">
+						<div class="round game-el">
+							<span class="el-round">2 round</span>
+						</div>
+						<div class="number game-el">
+							<span class="el-number">2</span>
+							<span class="el-number">5</span>
+							<span class="el-number">8</span>
+							<!-- ball 5개 너비 체크용 
+								<span>3</span>
+								<span>1</span> 
+							-->
+						</div>
+						<div class="matching game-el">
+							<span class="el-matching" name="ball">2B</span>
+						</div>
+					</div>
+					<div class="round-3 round-box">
+						<div class="round game-el">
+							<span class="el-round">3 round</span>
+						</div>
+						<div class="number game-el">
+							<span class="el-number">2</span>
+							<span class="el-number">5</span>
+							<span class="el-number">8</span>
+							<!-- ball 5개 너비 체크용 
+								<span>3</span>
+								<span>1</span> 
+							-->
+						</div>
+						<div class="matching game-el">
+							<span class="el-matching" name="out">out</span>
+						</div>
+					</div>
+					<div class="round-4 round-box">
+						<div class="round game-el">
+							<span class="el-round">4 round</span>
+						</div>
+						<div class="number game-el">
+							<span class="el-number">2</span>
+							<span class="el-number">5</span>
+							<span class="el-number">8</span>
+							<!-- ball 5개 너비 체크용 
+								<span>3</span>
+								<span>1</span> 
+							-->
+						</div>
+						<div class="matching game-el">
+							<span class="el-matching" name="strike">2S</span>
+							<span class="el-matching" name="ball">1B</span>
+						</div>
+					</div>
+					<div class="round-5 round-box">
+						<div class="round game-el">
+							<span class="el-round">5 round</span>
+						</div>
+						<div class="number game-el">
+							<span class="el-number">2</span>
+							<span class="el-number">5</span>
+							<span class="el-number">8</span>
+							<!-- ball 5개 너비 체크용 
+								<span>3</span>
+								<span>1</span> 
+							-->
+						</div>
+						<div class="matching game-el">
+							<span class="el-matching" name="out">out</span>
+						</div>
+					</div>
+				</div>
+				<div class="btn-box">
+					<span class="btn number">1</span>
+					<span class="btn number">2</span>
+					<span class="btn number">3</span>
+					<span class="btn number">4</span>
+					<span class="btn number">5</span>
+					<span class="btn number">6</span>
+					<span class="btn number">7</span>
+					<span class="btn number">8</span>
+					<span class="btn number">9</span>
+					<span class="btn number">0</span>
+					<span class="btn">Del</span>
+					<span class="btn">Ent</span>
+				</div>
+				
+				<div id="success-modal" class="modal">
+					<div class="modal-body">
+						<div class="title-box">
+							<div class="title">success</div>
+						</div>
+						<div class="rank-box">
+							<div>
+								<div class="rank-title">rank</div>
+							</div>
+							<div>
+								<div class="row"><span>1st</span><span>hoho</span></div>
+								<div class="row"><span>2and</span><span>으악</span></div>
+								<div class="row"><span>3rd</span><span>안녕?</span></div>
+								<div class="row"><span>4th</span><span>닉네임없음</span></div>
+								<div class="row"><span>5th</span><span>호호</span></div>
+								<div class="row"><span>6th</span><span>아르르</span></div>
+								<div class="row my-rank"><span>7th</span><span>용자눈나</span></div>
+								<div class="row"><span>8th</span><span>졸리군</span></div>
+								<div class="row"><span>9th</span><span>아..</span></div>
+								<div class="row"><span>10th</span><span>후.,</span></div>
+							</div>
+						</div>
+						
+						
+					</div>
+					
+					<div class="btn-box">
+						<button type="button" class="retry">retry</button>
+						<button type="button" class="home">home</button>
+						<button type="button" class="close">close</button>
+					</div>
+				</div>
+				
+			</div>
+		
+			
+		</div>
+		
+		
+	</body>
+</html>

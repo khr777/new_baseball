@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<!-- 관련 Namespace 선언 및 layout:decorate 추가 -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/default_layout}">
+	<head>
+	<!-- layout.html 에 들어간 head 부분을 제외하고 개별 파일에만 적용되는 head 부분 추가 -->
+	<!-- ============================================ -->
+	<!-- title 태그를 공통으로 사용할 수 있는 방법 모색 --> 
+	<!-- ============================================ -->
+	<title>BASEBALL CHALLENGE</title>
+	<link href="/static/css/rule_change_header.css"  th:href="@{/static/css/rule_change_header.css}" rel="stylesheet" />
+	
+	
+	<!-- 필요하다면 개별 파일에 사용될 css/js 선언  -->
+	<style>
+
+	</style>
+	</head>
+	
+	<!-- layout.html에 정의한 main page 부분 -->
+	<body layout:fragment="body">
+		<!-- code -->
+		
+		<div class="game-rule-box default-contents wrap">
+			<div>
+				<div class="title-box rule">
+					<div class="title">rule</div>
+					<div class="descr">감춰진 3개의 숫자가 무엇인지 맞추는 게임입니다.</div>
+				</div>
+				<div class="line"></div>
+				<div class="add-descr">
+					<div>
+						<ul>
+							<li>3자리 숫자와 위치가 모두 맞아야 성공입니다.</li>
+							<li>숫자는 0~9까지 구성되어 있으며, 각 숫자는 한번씩만 사용 가능합니다</li>
+							<li>숫자와 자리의 위치가 맞으면 스트라이크(S), 숫자만 맞으면 볼(B) 입니다.</li>
+							<li>숫자가 하나도 맞지 않을 경우 아웃(OUT) 으로 표시됩니다.</li>
+						</ul>
+					</div>
+					<div>	
+						<p>예시) 감춰진 숫자가 123 이라고 할 경우 </p>
+						<ul>
+							<li>102 = 1S 1B</li>
+							<li>124 = 2S</li>
+							<li>720 = OUT</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			<div>
+				<div class="rule-detail-select">
+					<div class="title">BASEBALL CHALLENGE에서는,</div>
+				</div>
+				<div class="line"></div>
+				<div class="add-descr">
+					<div>
+						<ul>
+							<li>맞출 숫자의 자릿수를 3개 또는 4개 중 선택할 수 있습니다.</li>
+							<li>감춰진 숫자를 맞추기 위한 PLAY 횟수를 직접 설정하여 게임 난이도를 조절할 수 있습니다.</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+			
+			
+		</div>
+		
+		
+	</body>
+</html>

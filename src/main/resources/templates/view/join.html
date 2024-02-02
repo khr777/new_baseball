@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- 관련 Namespace 선언 및 layout:decorate 추가 -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/default_layout}">
+	<head>
+	<!-- layout.html 에 들어간 head 부분을 제외하고 개별 파일에만 적용되는 head 부분 추가 -->
+	<!-- ============================================ -->
+	<!-- title 태그를 공통으로 사용할 수 있는 방법 모색 --> 
+	<!-- ============================================ -->
+	<title>BASEBALL CHALLENGE</title>
+	<link href="/static/css/join_login_common.css"  th:href="@{/static/css/join_login_common.css}" rel="stylesheet" />
+	<script src="/static/js/join.js" th:src="@{/static/js/join.js}" ></script>
+	
+	
+	<!-- 필요하다면 개별 파일에 사용될 css/js 선언  -->
+	<style>
+	</style>
+	</head>
+	
+	<!-- layout.html에 정의한 main page 부분 -->
+	<body layout:fragment="body">
+		<!-- code -->
+		<form id="join-form" action="/baseball/member/join-put" method="POST" name="join-form" onsubmit="return false;" >
+		<!-- 입력 필드 및 버튼 등을 여기에 추가 -->
+			<div class="join-contents-box default-contents wrap">
+				<div class="join-box">
+					<div class="join-title-box">
+						<div class="join-title">Are you ready?</div>
+					</div>
+					<div class="join-info-box">
+						<label class="join-input" for="login-id">
+							<span>NickName</span>
+							<input id="login-id" type="text" name="nickName" autofocus="autofocus" />
+						</label>
+						<label class="join-input" for="login-pw">
+							<span>Password</span>
+							<input id="login-pw" type="password" name="passWord"/>
+						</label>
+						<label class="join-input" for="login-pw-check">
+							<span>Password Check</span>
+							<input id="login-pw-check" type="password" name="passWordCheck"/>
+						</label>
+					</div>
+					<div class="join-btn-box">
+						<button type="submit" class="join-btn" onclick="joinSubmit();">join</button>
+					</div>
+				</div>
+			</div>
+		</form>
+		
+		
+		
+	</body>
+</html>

@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+
+
+
+/* ========================================== */ 
+/* ========================================== */
+html, body, a, ul, li {
+	margin: 0; 
+	padding: 0;
+}
+
+a {
+	text-decoration: unset;
+	color: inherit;
+}
+
+ul {
+	list-style: none;
+}
+
+.wrap {
+	width: 1000px !important;
+	/* border: 3px solid red; */
+	margin: 0 auto !important;
+}
+
+.default-contents {
+	height: 600px;
+	overflow: hidden;
+}
+
+
+
+/* 높이, height */
+
+.h-100-p {
+	height: 100%;
+}
+
+
+
+/* 마진, margin */ 
+.m-l-r-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.m-t-5 {
+	margin-top: 5px;
+}
+
+.m-t-10 {
+	margin-top: 10px;
+}
+
+.m-t-15 {
+	margin-top: 15px;
+}
+
+.m-t-20 {
+	margin-top: 20px;
+}
+
+.m-t-25 {
+	margin-top: 25px;
+}
+
+.m-t-30 {
+	margin-top: 30px;
+}
+
+.m-t-35 {
+	margin-top: 35px;
+}
+
+.m-t-40 {
+	margin-top: 40px;
+}
+
+.m-t-80 {
+	margin-top: 80px;
+}
+
+
+
+
+/* test border color */ 
+
+.b-purple {
+	border: 3px solid purple;
+}
+
+.b-red {
+	border: 3px solid red;
+}
+
+.b-orange {
+	border: 3px solid orange;
+}
+
+.b-blue {
+	border: 3px solid blue;
+}
+
+.b-green {
+	border: 3px solid green;
+}
+
+.b-gold {
+	border: 3px solid gold;
+}
+
+.b-black {
+	border: 3px solid black;
+}
+
+.b-gray {
+	border: 3px solid gray;
+}
+
+.b-olive {
+	border: 3px solid olive;
+}
+
+.b-navy {
+	border: 3px solid navy;
+}
+
+.b-maroon {
+	border: 3px solid maroon;
+}
+

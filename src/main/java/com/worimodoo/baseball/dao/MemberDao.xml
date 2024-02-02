@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.worimodoo.baseball.dao.MemberDao">
+	
+	<insert id="joinMember" useGeneratedKeys="true" keyProperty="id">
+		INSERT INTO member ( nickname, password, password_check, write_time)
+		VALUES ( #{nickName}, #{passWord}, #{passWordCheck}, NOW()); 
+	</insert>
+	
+	<select id="getNickNameOverlapCount" resultType="int">
+		SELECT COUNT(*) AS count 
+		FROM member 
+		WHERE nickname = #{nickName};
+	</select>
+	
+	
+	<resultMap type="Member" id="member">
+		<id property="id" column="id" />
+		<id property="nickName" column="nickname" />
+		<id property="passWord" column="password" />
+		<id property="passWordCheck" column="password_check" />
+		<id property="joinTime" column="join_time" />
+		<id property="writeTime" column="write_time" />
+		<id property="updateTime" column="update_time" />
+	</resultMap>	
+</mapper>

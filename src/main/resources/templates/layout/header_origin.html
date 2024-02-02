@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+	<th:block th:fragment="header-fragment">
+		<head>
+			<meta charset="UTF-8">
+			<title>Header Title</title>
+			<!-- application.yml에서 설정해준 /static/을 경로 설정을 할 때, 붙여줘야 css가 적용 된다.  -->
+			<link href="/static/css/common.css"  th:href="@{/static/css/common.css}" rel="stylesheet" />
+			<link href="/static/css/style.css"  th:href="@{/static/css/style.css}" rel="stylesheet" />
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> 
+			<script src="/static/js/common.js" th:src="@{/static/js/common.js}" ></script>
+			
+		</head>
+		<body>
+			<div class="header-box wrap">
+				<div class="main-logo-box">
+					<img id="main-logo" src="/static/image/main_logo.png" alt="" />
+				</div>
+				<div class="logo-bottom"></div>
+			</div>
+		</body>
+	</th:block>
+</html>

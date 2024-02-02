@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<!-- 관련 Namespace 선언 및 layout:decorate 추가 -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/default_layout}">
+	<head>
+	<!-- layout.html 에 들어간 head 부분을 제외하고 개별 파일에만 적용되는 head 부분 추가 -->
+	<title>BASEBALL CHALLENGE</title>
+	
+	<!-- 필요하다면 개별 파일에 사용될 css/js 선언  -->
+	<!-- ====================================================================
+		layout template의 중간에 들어가는 body 부분에서 사용하고자하는 별도 css/js 파일을 호출해야 default_layout.html 파일에서 header에 있는 jquery를 
+		로드한 후에 jquery로 작성된 js를 문제 없이 실행할 수 있다. 
+		====================================================================
+	-->
+	
+	</head>
+	
+	<!-- layout.html에 정의한 main page 부분 -->
+	<body layout:fragment="body">
+		<script src="/static/js/main.js"></script>
+		<!-- code -->
+		<div class="body-section wrap">
+			<div class="section-left">
+				<img src="/static/image/main_img_element_2.png" alt="" />
+			</div>
+			<div class="section-center">
+				<ul>
+					<li class="play-game"><a href="">play game</a></li>
+					<li class="rule"><a href="game_rule.html">rule</a></li>
+					<li class="login"><a href="login.html">login</a></li>
+					<li class="logout"><a href="">logout</a></li>
+				</ul>
+			</div>
+			<div class="section-right">
+				<img src="/static/image/main_img_element_1.png" alt="" />
+			</div>
+			
+			
+			<div id="rule-modal" class="modal wrap">
+				<div class="modal-body">
+					<div class="title-box">
+						<div class="title">Please, Play Rule Settings</div>
+					</div>
+					<div class="select-ball-box select">
+						<div class="title">Select Ball</div>
+						<div class="select-btn">
+							<span class="active">3</span>
+							<span>4</span>
+							<span>5</span>
+						</div>
+					</div>
+					<div class="select-round-box select">
+						<div class="title">Select Round</div>
+						<div class="select-btn">
+							<span class="active">30</span>
+							<span>25</span>
+							<span>20</span>
+						</div>
+						<div class="select-btn">
+							<span>15</span>
+							<span>10</span>
+							<span>5</span>
+						</div>
+					</div>
+					<div class="btn-box">
+						<button type="button" class="close">close</button>
+						<button type="button" class="play">play</button>
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<!-- 관련 Namespace 선언 및 layout:decorate 추가 -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/default_layout}">
+	<head>
+	<!-- layout.html 에 들어간 head 부분을 제외하고 개별 파일에만 적용되는 head 부분 추가 -->
+	<title>BASEBALL CHALLENGE</title>
+	
+	<!-- 필요하다면 개별 파일에 사용될 css/js 선언  -->
+	</head>
+	
+	<!-- layout.html에 정의한 main page 부분 -->
+	<body layout:fragment="body">
+		<!-- code -->
+		
+		<div class="main-contents-box default-contents wrap">
+			<div class="section-left">
+				<img src="/static/image/main_img_element_2.png" alt="" />
+			</div>
+			<div class="section-center">
+				<ul>
+					<li class="play-game"><a href="">play game</a></li>
+					<li class="rule"><a href="">rule</a></li>
+					<li class="login"><a href="">login</a></li>
+					<li class="logout"><a href="">logout</a></li>
+				</ul>
+			</div>
+			<div class="section-right">
+				<img src="/static/image/main_img_element_1.png" alt="" />
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

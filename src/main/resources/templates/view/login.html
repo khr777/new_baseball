@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<!-- 관련 Namespace 선언 및 layout:decorate 추가 -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/default_layout}">
+	<head>
+	<!-- layout.html 에 들어간 head 부분을 제외하고 개별 파일에만 적용되는 head 부분 추가 -->
+	<!-- ============================================ -->
+	<!-- title 태그를 공통으로 사용할 수 있는 방법 모색 --> 
+	<!-- ============================================ -->
+	<title>BASEBALL CHALLENGE</title>
+	<link href="/static/css/join_login_common.css"  th:href="@{/static/css/join_login_common.css}" rel="stylesheet" />
+	
+	
+	<!-- 필요하다면 개별 파일에 사용될 css/js 선언  -->
+	<style>
+		.header-box {
+			background-color: #F9F7F1 !important;
+		}
+		
+		.header-box > .logo-bottom {
+			background-color: #F9F7F1 !important;
+		}
+		
+		.header-box > .main-logo-box {
+			/* display: none; */
+		}
+		
+		.footer-box {
+			background-color: #F9F7F1 !important;
+		}
+		
+	</style>
+	</head>
+	
+	<!-- layout.html에 정의한 main page 부분 -->
+	<body layout:fragment="body">
+		
+		<!-- code -->
+		
+		<div class="login-contents-box default-contents wrap">
+		
+			<div class="login-box">
+				<div class="login-title-box">
+					<div class="login-title">Welcome Back!</div>
+				</div>
+				<div class="login-info-box">
+					<label class="login-input" for="login-id">
+						<span>NickName</span>
+						<input id="login-id" type="text" />
+					</label>
+					<label class="login-input" for="login-pw">
+						<span>Password</span>
+						<input id="login-pw" type="password" />
+					</label>
+				</div>
+				<div class="login-btn-box">
+					<button type="submit" class="login-btn">login</button>
+				</div>
+				<div class="other-btn-box">
+					<span class="move-join-btn">join</span>
+					<span class="move-find-info-btn">find info</span>
+				</div>
+			</div>
+		</div>
+		
+		
+	</body>
+</html>

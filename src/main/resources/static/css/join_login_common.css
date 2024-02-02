@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+
+.header-box,
+.header-box > .logo-bottom, 
+.header-box > .main-logo-padding-box,
+.footer-box,
+.login-contents-box {
+	background-color: #F9F7F1 !important;
+}
+
+.header-box {
+	margin-top: 60px;
+}
+
+.footer-box {
+	padding-top: 40px;
+}
+
+.default-layout-box .layout .nickname-box > .nickname-el {
+	display: none;
+}
+
+
+.main-logo-box > .main-logo-el > .main-logo-1 {
+	top: -5px;
+	color: #F64949; 
+}
+
+.main-logo-box > .main-logo-el > .main-logo-2 {
+	color: #fff;
+	top: 0;
+	left: 6px;
+}
+
+.footer-box > .made-box > span {
+	color: #000;
+} 

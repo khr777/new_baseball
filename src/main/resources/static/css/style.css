@@ -1,0 +1,1040 @@
+@charset "UTF-8";
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap');
+
+
+
+.test {
+	color: red;
+	font-size: 50px;
+}
+
+
+
+
+/* ========================================== */ 
+/* ========================================== */ 
+html, body {
+    height: 100%;
+    font-family: 'Black Han Sans', sans-serif;
+    
+}
+
+/* header 시작 */ 
+.header-box {
+	border-radius: 20px;
+	/* background: #F9F7F1; */
+	background-color: #44423e;
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+}
+
+.header-box > .logo-bottom {
+	height: 50px;
+    /* background-color: red; */
+    background-color: #292929;
+    margin-top: -80px;
+}
+
+.main-logo-box {
+	display: flex;
+	justify-content: center;
+	padding: 50px 0;
+} 
+
+.main-logo-box > #main-logo {
+	width: 600px;
+}
+/* header 끝 */
+
+/* */
+.default-layout-box {
+	/* border: 5px solid gold; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
+    
+    
+    /* height: 100%; */
+    
+    
+    
+} 
+/* */ 
+
+
+/* footer */
+.footer-box {
+	display: flex;
+    justify-content: space-between;
+    align-items: end;
+	background-color: #292929;
+	border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.footer-box > img:first-child {
+	width: 500px;
+	padding-bottom: 2px;
+}
+
+.footer-box > img:nth-child(2) {
+	width: 150px;
+	height: 15px;
+	padding: 10px;
+}
+/* footer */
+
+
+/* 메인 시작 */
+.main-contents-box {
+	/* border: 3px solid green; */
+	/* height: 100vh; */
+	display: flex;
+	justify-content: space-between;
+	/* height: 600px; */
+    /* overflow: hidden; */
+    background-color: #292929;
+	
+}
+
+.main-contents-box > .section-left {
+	margin-left: -100px;
+    /* margin-top: 200px; */
+    /* padding-top: 100px; */
+    padding-top: 40px; 
+}
+
+.main-contents-box > .section-right {
+	width: 400px;
+    margin-right: -100px;
+    /* margin-top: 220px; */
+    /* padding-top: 50px; */
+    padding-top: 97px;
+}
+
+.main-contents-box > .section-right > img {
+	height: 500px;
+}
+
+.main-contents-box > .section-center {
+	margin-top: 150px;
+}
+
+.main-contents-box > .section-center > ul > li {
+	text-align: center;
+	/* font-size: 60px; */
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 900;
+	line-height: normal;
+	letter-spacing: 12px;	
+	text-transform: uppercase;
+}
+
+.main-contents-box > .section-center > ul > li.play-game {
+	/* color: #7A4C4C; */
+	color: #eba2a2; 
+}
+
+.main-contents-box > .section-center > ul > li.rule {
+	/* color: #723434; */
+	color: #ce6565;
+}
+
+.main-contents-box > .section-center > ul > li.login, 
+.main-contents-box > .section-center > ul > li.logout {
+	/* color: #691313; */
+	color: #c6bbbb; 	
+}
+
+.main-contents-box > .section-center > ul > li.logout {
+	
+}
+
+.main-contents-box > .section-center > ul > li > a {
+
+	display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+
+
+
+
+
+
+
+/* ========================================================== */ 
+/* ====== NEW , CSS 다시 시작 !! ====== */ 
+/* header 시작 */ 
+.header-box {
+	border-radius: 20px;
+	/* background: #F9F7F1; */
+	background-color: #44423e;
+    border-bottom-left-radius: unset;
+    border-bottom-right-radius: unset;
+}
+
+.header-box > .logo-bottom {
+	height: 50px;
+    /* background-color: red; */
+    background-color: #292929;
+    margin-top: -80px;
+}
+
+.header-box > .main-logo-box {
+	display: flex;
+	justify-content: center;
+	/* padding: 25px 0;  */
+	/* border: 3px solid gold; */
+	/* height: 100%; */
+	/* padding: 50px 0; */
+	padding: 20px;
+}
+
+.header-box > .main-logo-padding-box {
+	/* border: 3px solid green; */
+	padding: 20px;
+	background-color: #292929;
+}
+
+
+.header-box > .main-logo-box > .main-logo-el {
+	position: relative;
+	width: 700px;
+	height: 100%;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+}
+
+.header-box .main-logo-box  .main-logo {
+	/* border: 3px solid green; */
+	font-size: 40px;
+	letter-spacing: 12px;	
+	text-transform: uppercase;
+	position: absolute;
+	width: 100%;
+}
+
+.main-logo-box > .main-logo-el > .main-logo-1 {
+	/* top: -20px; */
+	top: -5px; 
+}
+
+.main-logo-box > .main-logo-el > .main-logo-2 {
+	color: #fff;
+	/* top: 5px; */
+	/* top: -15px; */
+	top: 0;
+	left: 6px;
+}
+/* header 끝 */
+
+/* default-layout 시작 */
+.default-layout-box {
+	/* border: 5px solid gold; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+    
+    
+    
+    
+    height: 100%;
+} 
+
+.default-layout-box .layout {
+	/* border: 3px solid red; */
+	background-color: #F9F7F1;
+	height: 100%;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center; */
+    display: flex;
+    align-items: center;
+}
+
+.default-layout-box .layout .nickname-box {
+	display: flex;
+    color: #515670;
+    align-items: center;
+    justify-content: end;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.default-layout-box .layout .nickname-box > .nickname-label {
+	margin-right: 10px;
+}
+
+.default-layout-box .layout .nickname-box > .nickname {
+	background-color: #DFDCDC;
+    display: block;
+    padding: 20px 30px;
+    border-radius: 15px;
+}
+
+
+
+
+
+/* default-layout 끝 */
+
+
+/* footer */
+.footer-box {
+	display: flex;
+    justify-content: space-between;
+    align-items: end;
+	background-color: #292929;
+	border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    height: 100px;
+}
+
+.footer-box > .footer-logo-box {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	position: relative;
+}
+
+.footer-box .footer-logo-box  .logo-box {
+	/* border: 3px solid green; */
+	font-size: 35px;
+	letter-spacing: 6px;	
+	text-transform: uppercase;
+	width: 100%;
+	position: absolute;
+	top: 20px;
+}
+
+.footer-box .footer-logo-box  .logo-box.logo-box-1 {
+	top: 30px;
+}
+
+.footer-box .footer-logo-box  .logo-box.logo-box-1 > span:nth-child(1) {
+	position: absolute;
+	/* left: 56px; */
+	left: 54px;
+	/* border: 3px solid red; */
+}
+
+.footer-box .footer-logo-box  .logo-box.logo-box-1 > span:nth-child(2) {
+	position: absolute;
+	left: 50px;
+	/* border: 3px solid blue; */
+}
+
+.footer-box .footer-logo-box  .logo-box.logo-box-2 > span {
+	position: absolute;
+	left: 14px;
+	top: 30px;
+}
+
+.footer-box > .made-box > span {
+	width: 148px;
+    display: block;
+    padding-bottom: 5px;
+    color: #7e7e7e;
+}
+
+
+/* footer */
+
+
+/* 메인 시작 */
+.body-section {
+	/* border: 3px solid red; */
+	
+	
+	
+	
+	
+	/* height: 100vh; */
+}
+.body-section {
+	/* border: 3px solid green; */
+	/* height: 100vh; */
+	display: flex;
+	justify-content: space-between;
+	height: 600px;
+    
+    background-color: #292929;
+    
+    
+    
+    /* height: 700px; */
+    overflow: hidden;
+    overflow-y: auto;
+	
+}
+
+.body-section > .section-left {
+	margin-left: -100px;
+    /* margin-top: 200px; */
+    /* padding-top: 100px; */
+    /* padding-top: 170px; */
+    /* padding-top: 130px;  */
+    padding-top: 30px;
+}
+
+.body-section > .section-right {
+	width: 400px;
+    margin-right: -100px;
+	/* padding-top: 290px; */
+	/* padding-top: 180px; */
+	padding-top: 90px;
+}
+
+.body-section > .section-right > img {
+	height: 500px;
+}
+
+.body-section > .section-center {
+	/* margin-top: 150px; */
+	/* margin-top: 220px; */
+	margin-top: 120px;
+}
+
+.body-section > .section-center > ul > li {
+	text-align: center;
+	/* font-size: 60px; */
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 900;
+	line-height: normal;
+	letter-spacing: 12px;	
+	text-transform: uppercase;
+}
+
+.body-section > .section-center > ul > li.play-game {
+	/* color: #7A4C4C; */
+	color: #eba2a2; 
+}
+
+.body-section > .section-center > ul > li.rule {
+	/* color: #723434; */
+	color: #ce6565;
+}
+
+.body-section > .section-center > ul > li.login, 
+.body-section > .section-center > ul > li.logout {
+	/* color: #691313; */
+	color: #c6bbbb; 	
+}
+
+.body-section > .section-center > ul > li.logout {
+	
+}
+
+.body-section > .section-center > ul > li > a {
+
+	display: block;
+    text-align: center;
+    padding: 10px;
+}
+
+/* 메인 게임 룰 선택 모달 시작 */
+.body-section #rule-modal.modal {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+    background-color: #f2f2f2bd;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    max-width: 100%;
+    flex-direction: column;
+    color: #fff;
+    display: none;
+}
+
+.body-section #rule-modal.modal .modal-body {
+	background-color: #123527;
+	width: 550px;
+	height: 550px;
+	border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.body-section #rule-modal.modal .modal-body > .title-box {
+	font-size: 30px;
+	color: #fff;
+	padding: 30px;
+    text-decoration: underline;
+    text-underline-offset: 8px;
+	
+}
+
+.body-section #rule-modal.modal .modal-body > .select {
+	width: 425px;
+}
+
+.body-section #rule-modal.modal .modal-body > .select .title {
+	font-size: 26px;
+}
+
+.body-section #rule-modal.modal .modal-body > .select span  {
+	width: 100px;
+    display: block;
+    padding: 10px;
+    text-align: center;
+    /* font-size: 20px; */
+    font-size: 26px;
+    background-color: #fff;
+    color: #000;
+    border-radius: 10px;
+}
+
+.body-section #rule-modal.modal .modal-body > .select-ball-box {
+	margin-top: 10px;
+}
+
+.body-section #rule-modal.modal .modal-body > .select-round-box {
+	margin-top: 48px;
+}
+
+.body-section #rule-modal.modal .modal-body .select-btn {
+	display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.body-section #rule-modal.modal .modal-body .select-btn .active {
+	background-color: #0C4537;
+	color: #fff;
+}
+ 
+
+.body-section #rule-modal.modal > .modal-body > .btn-box {
+	margin-top: 40px;
+    text-transform: capitalize;
+}
+
+.body-section #rule-modal.modal > .modal-body > .btn-box > button {
+	width: 150px;
+	color: #fff;
+	text-transform: capitalize;
+	font-family: 'Black Han Sans', sans-serif;
+	border: none;
+	/* padding: 10px; */
+	padding: 10px;
+	margin: 0 20px;
+	letter-spacing: 3px;
+	border-radius: 8px;
+	cursor: pointer;
+	background-color: #3F785D;
+	font-size: 30px;
+}
+
+.body-section #rule-modal.modal > .modal-body > .btn-box > button.close {
+	color: #1F3D14;
+}
+
+.body-section #rule-modal.modal  > .modal-body > .btn-box > button.play {
+	color: #0A1B04;
+}
+
+/* 메인 게임 룰 선택 모달 끝  */
+
+
+/* 메인  끝 */ 
+
+
+
+/* 로그인 시작 */
+
+
+
+.login-contents-box, 
+.join-contents-box {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.login-contents-box > .login-box,
+.join-contents-box > .join-box {
+	/* border: 3px solid red; */
+	width: 600px;
+	height: 500px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.login-contents-box > .login-box > .login-title-box > .login-title, 
+.join-contents-box > .join-box > .join-title-box > .join-title {
+	color: #355DC5;
+	font-size: 40px;
+	text-align: center;
+}
+
+.login-contents-box > .login-box > .login-info-box,
+.join-contents-box > .join-box > .join-info-box {
+	width: 400px;
+	/* border: 3px solid gold; */
+	margin-top: 60px;
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-contents-box > .login-box > .login-info-box > label.login-input,
+.join-contents-box > .join-box > .join-info-box > label.join-input {
+	font-size: 18px;
+	color: #A06520;
+	display: flex;
+	flex-direction: column;
+	margin-top: 20px;
+	width: 300px;
+	/* align-items: center; */
+}
+
+.login-contents-box > .login-box > .login-info-box > label.login-input > input,
+.join-contents-box > .join-box > .join-info-box > label.join-input > input {
+	width: 100%;
+	height: 40px;
+	background-color: #E0DEDE;
+	border-radius: 5px;
+	border: none;
+	margin-top: 5px;
+}
+
+.login-contents-box > .login-box > .login-btn-box,
+.join-contents-box > .join-box > .join-btn-box {
+	margin-top: 50px;
+}
+
+.login-contents-box > .login-box > .login-btn-box > .login-btn,
+.join-contents-box > .join-box > .join-btn-box > .join-btn {
+	background-color: #355DC5;
+	width: 300px;
+	height: 50px; 
+	border: none;
+	border-radius: 5px;
+	color: #fff;
+	text-transform: uppercase;
+	font-size: 24px;
+	font-family: 'Black Han Sans', sans-serif; 
+	letter-spacing: 3px;
+}
+
+.login-contents-box > .login-box > .other-btn-box {
+	margin-top: 30px;
+	margin-left: 20px;
+}
+
+.login-contents-box > .login-box > .other-btn-box > span {
+	color: #515670;
+	text-transform: uppercase;
+	cursor: pointer;
+}
+
+.login-contents-box > .login-box > .other-btn-box > span:hover {
+	color: #435fee;	
+}
+
+.login-contents-box > .login-box > .other-btn-box > span:nth-child(2) {
+	margin-left: 20px;
+}
+
+/* 로그인 끝 */
+
+
+
+
+
+/* 게임 시작 */
+
+.game-contents-box {
+	/* 헤더 제거 */ 
+	/* height: 630px; */
+	height: 830px;
+}
+
+.game-contents-box > .game-contents-header {
+	height: 200px;
+	background-color: #232121;
+	position: relative;
+}
+
+
+.game-contents-box > .game-contents-header > .answer-box {
+	display: flex;
+    margin-left: 80px;
+    padding-top: 20px;
+}
+
+.game-contents-box > .game-contents-header > .round-box {
+	display: flex;
+    flex-direction: column;
+    align-items: center;
+	position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.game-contents-box > .game-contents-header > .round-box > .round-box-flex.round-box-2 {
+	display: flex;	
+}
+
+.game-contents-box > .game-contents-header > .round-box > .round-box-flex.round-box-2 > .entered-number-1 {
+	background-color: #fff;
+	color: #4a4a4a;
+}
+
+.game-contents-box > .game-contents-header > .round-box .current-round {
+	color: #FF7878;	
+	font-size: 30px;
+	text-transform: uppercase;
+}
+
+.game-contents-box > .game-contents-header > .round-box .current-round > span {
+	font-size: 40px;
+}
+
+.game-contents-box > .game-contents-header > .round-box .entered-number {
+	display: block;
+	width: 55px;
+	height: 50px;
+	border-radius: 10px;
+	text-align: center;
+	line-height: 55px;
+	font-size: 40px;
+	margin: 0 5px;
+	color: #856b98;
+	background-color: #39E4A6;
+}
+
+
+.game-contents-box > .game-contents-header > .answer-box > .answer-el {
+	display: block;
+	width: 55px;
+	height: 50px;
+	background-color: #7B9EF9;
+	border-radius: 10px;
+	text-align: center;
+	line-height: 55px;
+	font-size: 40px;
+	margin: 0 5px;
+	color: #856b98;
+
+}
+
+.game-contents-box > .game-contents-header > .score-nickname-box {
+	position: absolute;
+	bottom: 0;
+	display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.game-contents-box > .game-contents-header > .score-nickname-box > .score-box {
+	color: #fff;
+	font-size: 24px;
+	display: flex;
+	text-transform: uppercase;
+	align-items: center;
+	margin-left: 30px;
+}
+
+.game-contents-box > .game-contents-header > .score-nickname-box > .score-box > .size-up {
+	font-size: 35px;
+}
+
+.game-contents-box > .game-contents-header > .score-nickname-box > .score-box > .try-score, 
+.game-contents-box > .game-contents-header > .score-nickname-box > .score-box > .sl,
+.game-contents-box > .game-contents-header > .score-nickname-box > .score-box > .current-score {
+	margin-left: 20px;
+}
+
+.game-contents-box > .game-contents-header > .score-nickname-box > .score-box > .sl {
+	margin-top: 4px;
+}
+
+.game-contents-box > .game-contents-header > .score-nickname-box > .score-box > .current-score {
+	color: #F0D07D; 
+}
+
+.game-contents-box > .game-contents-header > .score-nickname-box > .game-nickname-box {
+	margin-bottom: 15px;
+	margin-right: 20px;
+}
+
+.game-contents-box > .game-contents-header > .score-nickname-box > .game-nickname-box > .nickname-title {
+	color: #fff;
+	font-size: 16px;
+	text-align: right;
+}
+
+.game-contents-box > .game-contents-header > .score-nickname-box > .game-nickname-box > .user-nickname {
+	color: #464989;
+	background-color: #D9D9D9;
+	width: fit-content;
+	padding: 10px 15px;
+	border-radius: 15px;
+	text-align: center;
+	margin-top: 10px;
+}
+
+
+
+.game-contents-box > .game-box {
+	/* height: 100%; */
+    display: flex;
+    /* justify-content: center; */
+    flex-direction: column;
+    align-items: center;	
+    position: relative;
+}
+
+.game-contents-box > .game-box  .round-box {
+	display: flex;
+	text-align: center;
+	width: fit-content;
+	padding: 10px 10px;
+	background-color: #414141;
+	border-radius: 10px;
+	margin-top: 10px;
+}
+
+.game-contents-box > .game-box > .total-round-5 {
+	width: fit-content;
+	padding: 10px;
+	height: fit-content;
+}
+
+.game-contents-box > .game-box  .round-box > .game-el {
+	width: 80px;
+	color: #fff;
+}
+
+.game-contents-box > .game-box  .round-box  .el-round {
+	color: #F0D07D;
+}  
+
+.game-contents-box > .game-box .round-box  .el-number {
+	color: #fff;
+}  
+
+.game-contents-box > .game-box  .round-box > .game-el > .el-matching[name="out"] {
+	color: #FF9C28;	
+}
+
+.game-contents-box > .game-box  .round-box > .game-el > .el-matching[name="strike"] {
+	/* color: #F60B0B; */
+	color: #34ccaa;	
+}
+
+.game-contents-box > .game-box > .btn-box {
+	display: flex;
+    /* margin-top: 300px; */
+    margin-top: 288px;	
+}
+
+.game-contents-box > .game-box > .btn-box > .btn {
+	width: 60px;
+    /* border: 3px solid green; */
+    display: block;
+    text-align: center;
+    padding: 10px 2px;
+    margin: 0 5px;
+    font-size: 30px;
+    background-color: #BEB6B6;
+    border-radius: 10px;
+    line-height: 42px;
+    cursor: pointer;
+}
+
+.game-contents-box > .game-box > .btn-box > .btn.number {
+	font-size: 34px;
+}
+
+
+/* 게임 성공 모달 시작 */ 
+.game-box #success-modal.modal {
+	/* display: block; */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+    background-color: #f2f2f2bd;
+    height: 100%;
+    position: absolute;
+    max-width: 100%;
+    /* opacity: 0.6; */
+    flex-direction: column;
+}
+
+.game-box #success-modal.modal .modal-body {
+	background-color: #fff;
+	width: 500px;
+	height: 500px;
+	border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.game-box #success-modal.modal .modal-body > .title-box {
+	font-size: 50px;
+	letter-spacing: 4px;
+	text-transform: uppercase;
+	color: red;
+	padding: 30px;
+}
+
+.game-box #success-modal.modal .modal-body > .rank-box {
+	width: 100%;
+	text-align: center;
+}
+
+.game-box #success-modal.modal .modal-body > .rank-box .rank-title {
+	text-transform: capitalize;
+	font-size: 28px;
+	padding: 20px;
+}
+
+.game-box #success-modal.modal .modal-body > .rank-box .row {
+	display: flex;
+	justify-content: center;
+	width: 300px;
+	margin: 0 auto;
+	padding: 1px;
+}
+
+.game-box #success-modal.modal .modal-body > .rank-box .row > span:nth-child(1) {
+	width: 60px;
+}
+
+.game-box #success-modal.modal .modal-body > .rank-box .row > span:nth-child(2) {
+	display: block;
+	/* margin-left: 50px; */
+	width: 120px;
+}
+
+.game-box #success-modal.modal .modal-body > .rank-box .row.my-rank {
+	background-color: #3C32B1;
+	border-radius: 4px;
+	color: #fff; 
+}
+
+.game-box #success-modal.modal > .btn-box {
+	margin-top: 40px;
+	width: 600px;
+    margin-left: auto;
+    margin-right: 0;
+}
+
+.game-box #success-modal.modal > .btn-box > button {
+	width: 150px;
+	color: #fff;
+	text-transform: capitalize;
+	font-family: 'Black Han Sans', sans-serif;
+	border: none;
+	/* padding: 10px; */
+	padding: 10px;
+	margin: 0 20px;
+	letter-spacing: 3px;
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.game-box #success-modal.modal  > .btn-box > button.retry {
+	background-color: #1E139F;
+}
+
+.game-box #success-modal.modal   > .btn-box > button.home {
+	background-color: #324EB1;
+}
+
+.game-box #success-modal.modal > .btn-box > button.close {
+	background-color: #6484F4;
+}
+
+
+
+/* 게임 끝 */ 
+
+
+
+
+
+/* 게임 룰 설명 시작 */
+.game-rule-box {
+	/* 헤더 제거 */ 
+	/* height: 630px; */
+	height: 800px;
+} 
+
+.game-rule-box  .line {
+	background-color: #D9D9D9;
+    height: 6px;
+    width: 960px;
+    margin: auto;
+    margin-top: 6px;
+}
+
+.game-rule-box .title-box.rule {
+    margin-top: 150px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.game-rule-box .title-box.rule .title {
+	width: 200px;
+    text-align: center;
+    font-size: 36px;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+    color: #9A0909;
+}
+
+.game-rule-box .title-box.rule .descr {
+	font-size: 20px;
+}
+
+.game-rule-box .add-descr {
+	width: 900px;
+	margin: auto;
+    padding: 20px;
+}
+
+.game-rule-box .add-descr > div:nth-child(2) {
+	margin-top: 80px;
+}
+
+.game-rule-box .add-descr ul {
+	list-style: decimal;
+}
+
+.game-rule-box .add-descr ul li {
+	margin: 10px 20px 0;
+}
+
+
+.game-rule-box .rule-detail-select .title {
+	font-size: 20px;
+	margin-left: 50px;
+	margin-top: 50px;
+	color: #9A0909;
+}
+/* 게임 룰 설명 끝  */
