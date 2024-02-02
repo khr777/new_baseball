@@ -1,27 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
-  <appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
-    <encoder>
-      <pattern>%d{yyyyMMdd HH:mm:ss.SSS} [%thread] %-3level %logger{5} - %msg %n</pattern>
-    </encoder>
-  </appender>
-  
-  <logger name="jdbc" level="OFF"/>
-  
-  <logger name="jdbc.sqlonly" level="OFF"/>
-  <!-- <logger name="jdbc.sqltiming" level="DEBUG"/> -->
-  <logger name="jdbc.sqltiming" level="OFF"/>
-  <logger name="jdbc.audit" level="OFF"/>
-  <logger name="jdbc.resultset" level="OFF"/>
-  <logger name="jdbc.resultsettable" level="DEBUG"/>
-  <logger name="jdbc.connection" level="OFF"/>
+	
+	<!-- 로그 패턴에 색상 적용 %clr(pattern){color} -->
+	<conversionRule conversionWord="clr" converterClass="org.springframework.boot.logging.logback.ColorConverter" />
+	<conversionRule conversionWord="wex" converterClass="org.springframework.boot.logging.logback.WhitespaceThrowableProxyConverter" />
+	<conversionRule conversionWord="wEx" converterClass="org.springframework.boot.logging.logback.ExtendedWhitespaceThrowableProxyConverter" />
+	
+	<!-- log 변수 값 설정 -->
+	<property name="CONSOLE_LOG_PATTERN" value="${CONSOLE_LOG_PATTERN:-%clr(%d{${LOG_DATEFORMAT_PATTERN:-yyyy-MM-dd HH:mm:ss.SSS}}){green} %clr(${LOG_LEVEL_PATTERN:-%7p}){cyan}  %clr(${PID:- }){magenta} %clr(---){faint} %clr([%15.15t]){faint} %clr(%-40.40logger{39}){cyan} %clr(:){faint} %m%n${LOG_EXCEPTION_CONVERSION_WORD:-%wEx}}" />
+	<property name="CONSOLE_LOG_CHARSET" value="${CONSOLE_LOG_CHARSET:-default}" />
+	
+	
+	<appender name="STDOUT" class="ch.qos.logback.core.ConsoleAppender">
+		<encoder>
+			<pattern>${CONSOLE_LOG_PATTERN}</pattern>
+			<charset>${CONSOLE_LOG_CHARSET}</charset>
+		</encoder>
+	</appender>
+
+
+	<logger name="jdbc" level="OFF" />
+	<logger name="jdbc.sqlonly" level="OFF" />
+	<!-- <logger name="jdbc.sqltiming" level="DEBUG"/> -->
+	<logger name="jdbc.sqltiming" level="OFF" />
+	<logger name="jdbc.audit" level="OFF" />
+	<logger name="jdbc.resultset" level="OFF" />
+	<logger name="jdbc.resultsettable" level="DEBUG" />
+	<logger name="jdbc.connection" level="OFF" />
 
 
 	<root level="INFO">
 		<appender-ref ref="STDOUT" />
-	</root>  
-  <!-- 
-  <root level="INFO">
-    <appender-ref ref="STDOUT" />
-  </root>
-   -->
+	</root>
+
+
+
+
+
 </configuration>

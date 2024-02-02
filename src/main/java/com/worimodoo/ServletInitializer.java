@@ -1,4 +1,4 @@
-package com.worimodoo.baseball;
+package com.worimodoo;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;

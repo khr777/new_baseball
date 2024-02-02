@@ -1,4 +1,4 @@
-package com.worimodoo.baseball;
+package com.worimodoo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
