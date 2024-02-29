@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.worimodoo.baseball.dao.GameDao">
+	
+	<insert id="insertStartGameData" useGeneratedKeys="true" keyProperty="gameId">
+		INSERT INTO start_game ( user_id, nickname, ball, round, playball, write_time )
+		VALUES ( #{id}, #{nickName}, #{ball}, #{round}, #{playball}, NOW() ); 
+	</insert>
+	
+	
+</mapper>

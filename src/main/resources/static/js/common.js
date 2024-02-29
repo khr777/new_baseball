@@ -12,7 +12,8 @@ $(document).ready(function(){
 function swal(type, title, text, func) {
 	Swal.fire({
 		title: title,
-		text: text,
+		// text: text,
+		html: text,
 		icon: type,
 		allowOutsideClick: true,
 		backdrop: true, // backdrop을 true로 설정(allowOuttsideClick ture 설정 시 함께 설정 )

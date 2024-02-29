@@ -12,7 +12,7 @@ import lombok.Getter;
 @Getter
 @Data
 @EqualsAndHashCode(callSuper=false)
-public class Member extends ResultDto implements ReturnCodeInterface {
+public class Member extends ResultDto implements ReturnCodeInterface{
 	
 	
 	private int id;

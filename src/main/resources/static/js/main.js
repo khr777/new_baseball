@@ -92,8 +92,8 @@ function gameRuleModalOpen() {
 	
 	$($rule).find('.btn-box .play').click(function(){
 		
-		const ruleBall = $($rule).find('.select-ball-box .select-btn span.standard').text(); 
-		const ruleRound = $($rule).find('.select-round-box .select-btn span.standard').text();
+		const ruleBall = $($rule).find('.select-ball-box .select-btn span.active').text(); 
+		const ruleRound = $($rule).find('.select-round-box .select-btn span.active').text();
 		
 		// 응답 데이터를 기반으로 URL 생성
 		const responseData = { ball: ruleBall, round: ruleRound };
@@ -114,3 +114,4 @@ function gameRuleModalClose() {
 	$($rule).find('.select .standard').addClass('active'); 
 	
 }
+

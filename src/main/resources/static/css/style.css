@@ -316,10 +316,12 @@ html, body {
 .footer-box > .footer-logo-box {
 	display: flex;
 	justify-content: space-between;
-	width: 100%;
+	/* width: 100%; */
+	width: 600px;
 	height: 100%;
 	flex-direction: column;
 	position: relative;
+	cursor: pointer;
 }
 
 .footer-box .footer-logo-box  .logo-box {
@@ -689,7 +691,8 @@ html, body {
 .game-contents-box {
 	/* 헤더 제거 */ 
 	/* height: 630px; */
-	height: 830px;
+	/* height: 830px; */
+	height: 804px;
 }
 
 .game-contents-box > .game-contents-header {
@@ -699,10 +702,36 @@ html, body {
 }
 
 
-.game-contents-box > .game-contents-header > .answer-box {
+
+.game-contents-box > .game-contents-header  .answer-box {
 	display: flex;
-    margin-left: 80px;
+    /* margin-left: 80px; */
+    margin-left: 30px;
     padding-top: 20px;
+}
+
+.game-contents-box > .game-contents-header .answer-box-parent  {
+	display: flex;
+	
+}
+
+.game-contents-box > .game-contents-header .answer-box-parent  .game-result {
+	display: none;
+}
+
+.game-contents-box > .game-contents-header .answer-box-parent  .game-result {
+	margin-left: auto;
+	margin-right: 0;
+	/* padding: 20px 30px; */
+	padding: 6px 30px;
+	font-size: 40px;
+	color: #95ffa1;
+	text-transform: capitalize;
+		
+}
+
+.game-contents-box > .game-contents-header .answer-box-parent  .game-result.fail {
+	color: #898ea8;
 }
 
 .game-contents-box > .game-contents-header > .round-box {
@@ -754,7 +783,7 @@ html, body {
 }
 
 
-.game-contents-box > .game-contents-header > .answer-box > .answer-el {
+.game-contents-box > .game-contents-header  .answer-box > .answer-el {
 	display: block;
 	width: 55px;
 	height: 50px;
@@ -764,7 +793,8 @@ html, body {
 	line-height: 55px;
 	font-size: 40px;
 	margin: 0 5px;
-	color: #856b98;
+	/* color: #856b98; */
+	color: #393583;
 
 }
 
@@ -848,7 +878,14 @@ html, body {
 	margin-top: 10px;
 }
 
-.game-contents-box > .game-box > .total-round-5 {
+.game-contents-box .game-box .total-round {
+	display: flex;
+    width: 100%;
+    justify-content: space-around;
+    flex-direction: row-reverse;
+}
+
+.game-contents-box > .game-box  .total-round-5 {
 	width: fit-content;
 	padding: 10px;
 	height: fit-content;
@@ -917,7 +954,7 @@ html, body {
 	align-items: center;
 	width: 100%;
     background-color: #f2f2f2bd;
-    height: 100%;
+    /* height: 100%; */
     position: absolute;
     max-width: 100%;
     /* opacity: 0.6; */
@@ -936,7 +973,7 @@ html, body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 50px;
+    /* margin-top: 50px; */
 }
 
 .game-box #success-modal.modal .modal-body > .title-box {
@@ -950,6 +987,8 @@ html, body {
 .game-box #success-modal.modal .modal-body > .rank-box {
 	width: 100%;
 	text-align: center;
+	overflow-y: auto;
+    padding-bottom: 40px;
 }
 
 .game-box #success-modal.modal .modal-body > .rank-box .rank-title {

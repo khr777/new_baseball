@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 	<th:block th:fragment="footer-fragment">
+		<script>
+			$(document).ready(function(){
+				$('.footer-logo-box').click(function(){
+					location.href='/baseball/main';
+				});
+			})
+		</script>
 		<div class="footer-box wrap">
 			<div class="footer-logo-box">
 				<div class="logo-box logo-box-1">

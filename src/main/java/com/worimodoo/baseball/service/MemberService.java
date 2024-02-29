@@ -37,14 +37,15 @@ public class MemberService implements ReturnCodeInterface, PathCodeInterface {
 		Member returnMember = memberDao.loginInfoCheck(member); 
 		
 		if ( returnMember != null ) {
-			member.setResultMsg("베이스볼 게임을 시작할 준비가 되었습니다!");
-			member.setResult(RETURN_SUCCESS);
-			member.setView(PATH_MAIN);
+			returnMember.setResultMsg("베이스볼 게임을 시작할 준비가 되었습니다!");
+			returnMember.setResult(RETURN_SUCCESS);
+			returnMember.setView(PATH_MAIN);
 		} else {
-			member.setResult(RETURN_EMPTY_OR_NULL);
-			member.setResultMsg("패스워드를 다시 입력해 주세요.");
+			returnMember = new Member();
+			returnMember.setResult(RETURN_EMPTY_OR_NULL);
+			returnMember.setResultMsg("패스워드를 다시 입력해 주세요.");
 		}
 		
-		return member; 
+		return returnMember; 
 	} 
 }

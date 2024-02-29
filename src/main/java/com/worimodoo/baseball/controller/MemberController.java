@@ -67,9 +67,11 @@ public class MemberController implements ReturnCodeInterface, ResultMessageInter
 	@RequestMapping(value="/login-check", method = RequestMethod.POST)
 	@ResponseBody
 	public Member memberLoginCheck(HttpServletRequest request, @RequestBody Member member, Model model) {
-		System.out.println("member : " + new Gson().toJson(member));
+		System.out.println("member login check : " + new Gson().toJson(member));
 		
 		member = memberService.loginInfoCheck(member);
+		
+		System.out.println("member login check after : " + new Gson().toJson(member));
 		
 		if ( member.getResult().equals(RETURN_SUCCESS) ) {
 			HttpSession session = request.getSession();

@@ -24,20 +24,30 @@
 		
 		<div class="game-contents-box default-contents wrap">
 			<div class="game-contents-header">
-				<div class="answer-box">
-					<span class="answer-el answer-1">?</span>
-					<span class="answer-el answer-2">?</span>
-					<span class="answer-el answer-3">?</span>
+				<div class="answer-box-parent">
+					<div class="answer-box">
+						<span class="answer-el answer-sample" style="display:none;">?</span>
+						<!-- 
+						<span class="answer-el answer-1">?</span>
+						<span class="answer-el answer-2">?</span>
+						<span class="answer-el answer-3">?</span>
+						 -->
+					</div>
+					<div class="game-result success">nice! <br />success!</div>
+					<div class="game-result fail">oops.. <br />fail..</div>
 				</div>
 				<div class="round-box">
 					<div class="round-box-flex round-box-1">
 						<div class="current-round"><span>3</span> round</div>
 					</div>
 					<div class="round-box-flex round-box-2">
+						<div class="entered-number entered-number-sample" style="display: none;"></div>
 						<!-- <div class="entered-number active entered-number-1">2</div> -->
+						<!--  
 						<div class="entered-number entered-number-1"></div>
 						<div class="entered-number entered-number-2"></div>
 						<div class="entered-number entered-number-3"></div>
+						-->
 					</div>
 				</div>
 				<div class="score-nickname-box">
@@ -55,95 +65,102 @@
 				
 			</div>
 			<div class="game-box">
-				<div class="total-round-5 total-round">
-					<div class="round-sample round-box" style="display: none;">
-						<div class="round game-el">
-							<span class="el-round">1 round</span>
+				<div class="total-round-template " style="width: 100%;">
+					<div class="total-round">
+						<div class="round-sample round-box" style="display: none;">
+							<div class="round game-el">
+								<span class="el-round">1 round</span>
+							</div>
+							<div class="number game-el">
+								<span class="el-number" style="display: none;">2</span>
+								<!-- 
+								<span class="el-number">2</span>
+								<span class="el-number">5</span>
+								<span class="el-number">8</span>
+								 -->
+								<!-- ball 5개 너비 체크용 
+									<span>3</span>
+									<span>1</span> 
+								-->
+							</div>
+							<div class="matching game-el">
+								<span  class="el-matching" name="strike" style="display: none;">1S</span>
+								<span  class="el-matching" name="ball" style="display: none;">1B</span>
+								<span class="el-matching" name="out" style="display: none;">out</span>
+							</div>
 						</div>
-						<div class="number game-el">
-							<span class="el-number">2</span>
-							<span class="el-number">5</span>
-							<span class="el-number">8</span>
-							<!-- ball 5개 너비 체크용 
-								<span>3</span>
-								<span>1</span> 
-							-->
+						<div class="round-2-1 round-box-1" style="display: none;">
+							<div class="round game-el">
+								<span class="el-round">2 round</span>
+							</div>
+							<div class="number game-el">
+								<span class="el-number">2</span>
+								<span class="el-number">5</span>
+								<span class="el-number">8</span>
+								<!-- ball 5개 너비 체크용 
+									<span>3</span>
+									<span>1</span> 
+								-->
+							</div>
+							<div class="matching game-el">
+								<span class="el-matching" name="ball">2B</span>
+							</div>
 						</div>
-						<div class="matching game-el">
-							<span  class="el-matching" name="strike">1S</span>
-							<span  class="el-matching" name="ball">1B</span>
+						<div class="round-3-1 round-box-1" style="display: none;">
+							<div class="round game-el">
+								<span class="el-round">3 round</span>
+							</div>
+							<div class="number game-el">
+								<span class="el-number">2</span>
+								<span class="el-number">5</span>
+								<span class="el-number">8</span>
+								<!-- ball 5개 너비 체크용 
+									<span>3</span>
+									<span>1</span> 
+								-->
+							</div>
+							<div class="matching game-el">
+								<span class="el-matching" name="out">out</span>
+							</div>
 						</div>
-					</div>
-					<div class="round-2-1 round-box-1" style="display: none;">
-						<div class="round game-el">
-							<span class="el-round">2 round</span>
+						<div class="round-4-1 round-box-1" style="display: none;">
+							<div class="round game-el">
+								<span class="el-round">4 round</span>
+							</div>
+							<div class="number game-el">
+								<span class="el-number">2</span>
+								<span class="el-number">5</span>
+								<span class="el-number">8</span>
+								<!-- ball 5개 너비 체크용 
+									<span>3</span>
+									<span>1</span> 
+								-->
+							</div>
+							<div class="matching game-el">
+								<span class="el-matching" name="strike">2S</span>
+								<span class="el-matching" name="ball">1B</span>
+							</div>
 						</div>
-						<div class="number game-el">
-							<span class="el-number">2</span>
-							<span class="el-number">5</span>
-							<span class="el-number">8</span>
-							<!-- ball 5개 너비 체크용 
-								<span>3</span>
-								<span>1</span> 
-							-->
-						</div>
-						<div class="matching game-el">
-							<span class="el-matching" name="ball">2B</span>
-						</div>
-					</div>
-					<div class="round-3-1 round-box-1" style="display: none;">
-						<div class="round game-el">
-							<span class="el-round">3 round</span>
-						</div>
-						<div class="number game-el">
-							<span class="el-number">2</span>
-							<span class="el-number">5</span>
-							<span class="el-number">8</span>
-							<!-- ball 5개 너비 체크용 
-								<span>3</span>
-								<span>1</span> 
-							-->
-						</div>
-						<div class="matching game-el">
-							<span class="el-matching" name="out">out</span>
-						</div>
-					</div>
-					<div class="round-4-1 round-box-1" style="display: none;">
-						<div class="round game-el">
-							<span class="el-round">4 round</span>
-						</div>
-						<div class="number game-el">
-							<span class="el-number">2</span>
-							<span class="el-number">5</span>
-							<span class="el-number">8</span>
-							<!-- ball 5개 너비 체크용 
-								<span>3</span>
-								<span>1</span> 
-							-->
-						</div>
-						<div class="matching game-el">
-							<span class="el-matching" name="strike">2S</span>
-							<span class="el-matching" name="ball">1B</span>
-						</div>
-					</div>
-					<div class="round-5-1 round-box-1" style="display: none;">
-						<div class="round game-el">
-							<span class="el-round">5 round</span>
-						</div>
-						<div class="number game-el">
-							<span class="el-number">2</span>
-							<span class="el-number">5</span>
-							<span class="el-number">8</span>
-							<!-- ball 5개 너비 체크용 
-								<span>3</span>
-								<span>1</span> 
-							-->
-						</div>
-						<div class="matching game-el">
-							<span class="el-matching" name="out">out</span>
+						<div class="round-5-1 round-box-1" style="display: none;">
+							<div class="round game-el">
+								<span class="el-round">5 round</span>
+							</div>
+							<div class="number game-el">
+								<span class="el-number">2</span>
+								<span class="el-number">5</span>
+								<span class="el-number">8</span>
+								<!-- ball 5개 너비 체크용 
+									<span>3</span>
+									<span>1</span> 
+								-->
+							</div>
+							<div class="matching game-el">
+								<span class="el-matching" name="out">out</span>
+							</div>
 						</div>
 					</div>
 				</div>
+				
 				<div class="btn-box">
 					<span class="btn number">1</span>
 					<span class="btn number">2</span>
@@ -162,11 +179,11 @@
 				<div id="success-modal" class="modal">
 					<div class="modal-body">
 						<div class="title-box">
-							<div class="title">success</div>
+							<div class="title">rank</div>
 						</div>
 						<div class="rank-box">
 							<div>
-								<div class="rank-title">rank</div>
+								<div class="rank-title"></div>
 							</div>
 							<div>
 								<div class="row"><span>1st</span><span>hoho</span></div>
@@ -179,6 +196,12 @@
 								<div class="row"><span>8th</span><span>졸리군</span></div>
 								<div class="row"><span>9th</span><span>아..</span></div>
 								<div class="row"><span>10th</span><span>후.,</span></div>
+								<div class="row"><span>10th</span><span>후.,</span></div>
+								<div class="row"><span>10th</span><span>후.,</span></div>
+								<div class="row"><span>10th</span><span>후.,</span></div>
+								<div class="row"><span>10th</span><span>후.,</span></div>
+								<div class="row"><span>10th</span><span>후.,</span></div>
+								<div class="row"><span>10th</span><span>후.,</span></div>
 							</div>
 						</div>
 						
@@ -186,9 +209,9 @@
 					</div>
 					
 					<div class="btn-box">
-						<button type="button" class="retry">retry</button>
-						<button type="button" class="home">home</button>
-						<button type="button" class="close">close</button>
+						<button type="button" class="retry" onclick="restartGame();">retry</button>
+						<button type="button" class="home" onclick="location.href='/baseball/main'">home</button>
+						<button type="button" class="close" onclick="gameResultModalClose();">close</button>
 					</div>
 				</div>
 				

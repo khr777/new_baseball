@@ -28,8 +28,55 @@ $(document).ready(function(){
 
 
 function settingRandomBall(ball, round) {
+	
+	
+	
+	for ( var i = 1; i <= ball; i++ ) {
+		const $answerEl = $('.game-contents-box .answer-box .answer-sample').last().clone();	
+		$($answerEl).addClass('answer-' + i).removeClass('answer-sample').show();
+		$('.game-contents-box .answer-box').prepend($answerEl);
+		
+		
+		const $roundEl = $('.game-contents-box .round-box .round-box-2 .entered-number-sample').last().clone();	
+		$($roundEl).addClass('entered-number-' + i).removeClass('entered-number-sample').show();
+		$('.game-contents-box .round-box .round-box-2').prepend($roundEl);
+		
+		const $roundNumberEl = $('.game-contents-box .game-box .total-round .round-box .el-number').last().clone();	
+		$($roundNumberEl).show();
+		$('.game-contents-box .game-box .total-round .round-box .number').prepend($roundNumberEl);
+		
+	}
+	
 	const playBallArray = createPlayBallNumber(ball);
-	console.log('playBallArray : ' + playBallArray); 
+	
+	 const formData = {
+        ball: ball,
+        round: round,
+		playball: JSON.stringify(playBallArray)
+    };
+    
+    $.ajax({
+        type: "POST",
+        url: "/baseball/play/start-game", // 서버의 엔드포인트 URL
+        data: JSON.stringify(formData), // 데이터를 JSON 문자열로 변환
+        contentType: "application/json", // 데이터 형식 설정
+		cache: false, // 캐싱 문제 방지 (브라우저는 Ajax 요청을 캐시할 수 있으며, 폼 데이터를 변경하더라도 이전 요청의 캐시를 사용할 수 있습니다. 이를 해결하기 위해 캐싱을 방지하는 헤더를 Ajax 요청에 추가하거나, 브라우저 캐시를 비우는 방법을 사용할 수 있습니다.)
+        success: function(response) {
+            // 성공적으로 요청이 처리되었을 때의 동작
+
+			if ( response.result != '1' ) {
+				swal('error', '', response.resultMsg, function(){
+					location.replace(response.view);
+				});
+			}
+			
+        },
+        error: function(error) {
+            // 요청이 실패했을 때의 동작
+        }
+    });
+	
+	 
 }
 
 
@@ -67,7 +114,8 @@ function settingPlayGame(ball, round) {
 	const firstRound = 1; 
 	
 	$($gameBox).find('.round-box .current-round span').html(firstRound); 
-	$($scoreBox).find('.current-score').html(firstRound); 
+	// $($scoreBox).find('.current-score').html(firstRound);
+	$($scoreBox).find('.current-score').html(round); 
 	$($scoreBox).find('.try-score').html(round);
 	
 	$($gameBox).attr('ball', ball); 
@@ -100,6 +148,12 @@ function putPlayNumber(paramBall, paramCurrRound, paramClickedNumber, paramClass
 	const $scoreBox = $($gameBox).find('.game-contents-header .score-nickname-box .score-box'); 
 	let activeCount = 1; 
 	
+	if ( $($gameBox).attr('check-playing') == '0' ) {
+		swal('error', '', '게임이 종료되었습니다.<br>다시 시작해 주세요!', function(){
+		});
+		return false;
+	}
+	
 	pushKey($gameBox, $scoreBox, activeCount, paramBall, paramCurrRound, paramClickedNumber, paramClass); 
 	
 	
@@ -118,42 +172,10 @@ function pushKey($gameBox, $scoreBox, activeCount, paramBall, paramCurrRound, pa
 		if ( paramClass.indexOf('enter') > -1 ) {
 			
 			
-			// 플레이 숫자 등록 검증 
+			// 플레이 숫자 등록 검증 통과 
 			if ( $($gameBox).find('.round-box .entered-number.active').length == paramBall ) {
 				
-				// 상단 입력 숫자 얻기 
-				let pushKeyArray = [];
-				pushKeyArray.push($($gameBox).find('.round-box .entered-number.active').eq(0).text());
-				pushKeyArray.push($($gameBox).find('.round-box .entered-number.active').eq(1).text());
-				pushKeyArray.push($($gameBox).find('.round-box .entered-number.active').eq(2).text());
-				
-				
-				// 등록 숫자판 복사 
-				const $addRoundEl = $($gameBox).find('.game-box .round-sample').last().clone();
-				
-				
-				// 상단 입력 숫자 초기화 
-				$($gameBox).find('.round-box .entered-number').removeClass('active').html(''); 
-			
-				const roundClass= 'round-' + paramCurrRound;
-				const nextRound = Number(paramCurrRound) + 1;
-				
-				$($addRoundEl).addClass(roundClass).removeClass('round-sample'); 
-				$($addRoundEl).find('.round.game-el span').text(paramCurrRound + ' round'); 
-				 
-				$($gameBox).find('.game-box .total-round').prepend($addRoundEl);
-				$($gameBox).find('.game-box .' + roundClass).show();
-				
-				$($gameBox).attr('curr-round', nextRound); 
-				$($gameBox).find('.round-box .current-round span').html(nextRound); 
-				$($scoreBox).find('.current-score').html(nextRound);
-				
-				
-				
-				
-				
-				showPushResult($gameBox, pushKeyArray, paramBall, paramCurrRound, $addRoundEl); 
-				
+				settingNextRound($gameBox, $scoreBox, paramBall, paramCurrRound);
 				
 				return false;
 				
@@ -262,11 +284,59 @@ function pushKey($gameBox, $scoreBox, activeCount, paramBall, paramCurrRound, pa
 
 
 // 플레이 숫자 결과 검증 후 노출 
-function showPushResult($gameBox, pushKeyArray, paramBall, paramCurrRound, $addRoundEl) {
+function showPushResult($gameBox, pushKeyArray, paramBall, paramCurrRound, $addRoundEl, playball) {
 	
-	$($addRoundEl).find('.number.game-el span').eq(0).text(pushKeyArray[0]);
-	$($addRoundEl).find('.number.game-el span').eq(1).text(pushKeyArray[1]);
-	$($addRoundEl).find('.number.game-el span').eq(2).text(pushKeyArray[2]);
+	const playballArray = playball.split(',');
+	let strikeCount = 0; 
+	let ballCount = 0;
+	let outCount = 0; 
+	
+	for ( var i = 0; i < paramBall; i++ ) {
+		$($addRoundEl).find('.number.game-el span').eq(i).text(pushKeyArray[i]);
+		
+	}
+	
+	
+	$.each(pushKeyArray, function(index, value){
+		
+		if ( playballArray[index] == value ) {
+			strikeCount++;
+		} else {
+			if ( playballArray.indexOf(value) > -1 ) {
+				ballCount++;
+			} else {
+				outCount++;
+			}
+		}
+	});
+	
+	
+	if ( outCount != paramBall ) {
+		if ( strikeCount > 0 ) {
+			$($addRoundEl).find('.el-matching[name="strike"]').text(strikeCount + 'S').show();	
+		}
+		
+		if ( ballCount > 0 ) {
+			$($addRoundEl).find('.el-matching[name="ball"]').text(ballCount + 'B').show();	
+		}	
+	} else {
+		$($addRoundEl).find('.el-matching[name="out"]').text('out').show();
+	}
+	
+	
+	
+	
+	// 마지막 라운드! 
+	const round = $('.game-contents-box').attr('round');
+	const nextRound = $('.game-contents-box').attr('curr-round');
+	
+	if ( round == nextRound ) {
+		swal('warning', '', '마지막 라운드 입니다!<br>신중하게 공격해 주세요!', function(){
+					
+		});	
+	}
+	
+	
 	
 }
 
@@ -297,4 +367,139 @@ function createPlayBallNumber(ball) {
 	}
 
     return playBall;
+}
+
+
+// 플레이 숫자를 맞추면 미션 성공으로 게임 종료, 라운드가 남았다면 이어서 플레이할 수 있도록 초기화 
+function settingNextRound($gameBox, $scoreBox, paramBall, paramCurrRound) {
+	
+	 
+	
+	// 상단 입력 숫자 얻기 
+	let pushKeyArray = [];
+	
+	for ( var i = 0; i < paramBall; i++ ) {
+		pushKeyArray.push($($gameBox).find('.round-box .entered-number.active').eq(i).text());	
+	}
+	
+	$.ajax({
+        type: "POST",
+        url: "/baseball/play/check-result", // 서버의 엔드포인트 URL
+        data: JSON.stringify(pushKeyArray), // 데이터를 JSON 문자열로 변환
+        contentType: "application/json", // 데이터 형식 설정
+		cache: false, // 캐싱 문제 방지 (브라우저는 Ajax 요청을 캐시할 수 있으며, 폼 데이터를 변경하더라도 이전 요청의 캐시를 사용할 수 있습니다. 이를 해결하기 위해 캐싱을 방지하는 헤더를 Ajax 요청에 추가하거나, 브라우저 캐시를 비우는 방법을 사용할 수 있습니다.)
+        success: function(response) {
+            // 성공적으로 요청이 처리되었을 때의 동작
+
+
+
+			const $answerBox = $('.game-contents-box .answer-box-parent');
+			const resultArray = response.playball.split(',');
+
+			if ( response.result == '1' ) {
+				
+				swal('success', '', response.resultMsg, function(){
+					
+					showPlayballResultNumber($answerBox,resultArray );
+					$($answerBox).find('.game-result.success').show();
+					$('#success-modal').css('display', 'flex');
+					
+					$($gameBox).attr('check-playing', 0);
+					
+				});
+				
+			} else {
+				
+				/*
+				* 이어서 플레이할 수 있도록 초기화 
+				*/ 
+				
+				
+				
+				if ( paramCurrRound == $($gameBox).attr('round') ) {
+					swal('warning', '', '공격 실패군요..<br>다시 도전해 보세요!', function(){
+						
+						$($scoreBox).find('.current-score').html(0);
+						
+						showPlayballResultNumber($answerBox,resultArray );
+						
+						$($answerBox).find('.game-result.fail').show();
+						$('#success-modal').css('display', 'flex');
+						$($gameBox).attr('check-playing', 0);
+					});
+					return false;
+				}
+				
+				
+				
+				// 등록 숫자판 복사 
+				const $addRoundEl = $($gameBox).find('.game-box .round-sample').last().clone();
+				
+				
+				// 상단 입력 숫자 초기화 
+				$($gameBox).find('.round-box .entered-number').removeClass('active').html(''); 
+			
+				const roundClass= 'round-' + paramCurrRound;
+				const nextRound = Number(paramCurrRound) + 1;
+				
+				$($addRoundEl).addClass(roundClass).removeClass('round-sample'); 
+				$($addRoundEl).find('.round.game-el span').text(paramCurrRound + ' round'); 
+				
+				
+				// 등록한 플레이 숫자판을 10개씩 나열하기 위한 로직 
+				let standard = 10;
+				
+				if ( paramCurrRound == 1  ) {
+					$($gameBox).find('.game-box .total-round').append('<div class="total-round-standard-' + standard + ' standard"></div>');
+					$($gameBox).find('.game-box .total-round .total-round-standard-' + standard).append($addRoundEl);
+				} else if ( ( paramCurrRound - 1  ) % standard === 0 ) {
+					
+					standard = ( paramCurrRound - 1 ) + standard
+					
+					$($gameBox).find('.game-box .total-round').prepend('<div class="total-round-standard-' + standard + ' standard"></div>');
+					$($gameBox).find('.game-box .total-round .total-round-standard-' + standard).prepend($addRoundEl);	
+					
+					
+				} else {
+					
+					$($gameBox).find('.game-box .total-round .standard').first().prepend($addRoundEl);	
+				}
+				
+				$($gameBox).find('.game-box .' + roundClass).show();
+				
+				$($gameBox).attr('curr-round', nextRound); 
+				$($gameBox).find('.round-box .current-round span').html(nextRound); 
+				$($scoreBox).find('.current-score').html($($scoreBox).find('.try-score').text() - (nextRound - 1 ));
+				
+				
+				
+				showPushResult($gameBox, pushKeyArray, paramBall, paramCurrRound, $addRoundEl, response.playball);
+			}
+			
+        },
+        error: function(error) {
+            // 요청이 실패했을 때의 동작
+        }
+    });
+	
+	
+	
+				
+}
+
+
+function restartGame() {
+	location.reload();	
+}
+
+
+
+function gameResultModalClose() {
+	$('#success-modal').css('display', 'none');	
+}
+
+function showPlayballResultNumber($answerBox,resultArray ) {
+	$.each($($answerBox).find('.answer-el'), function(index, val){
+		$(this).text(resultArray[index]);
+	});	
 }
