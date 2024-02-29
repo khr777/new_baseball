@@ -31,6 +31,9 @@ ul {
 	overflow: hidden;
 }
 
+.none {
+	display: none !important;
+}
 
 
 /* 높이, height */

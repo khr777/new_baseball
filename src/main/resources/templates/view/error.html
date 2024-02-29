@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<!-- 관련 Namespace 선언 및 layout:decorate 추가 -->
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+	layout:decorate="~{layout/default_layout}">
+	<head>
+	<!-- layout.html 에 들어간 head 부분을 제외하고 개별 파일에만 적용되는 head 부분 추가 -->
+	<title>BASEBALL CHALLENGE</title>
+	
+	<!-- 필요하다면 개별 파일에 사용될 css/js 선언  -->
+	<!-- ====================================================================
+		layout template의 중간에 들어가는 body 부분에서 사용하고자하는 별도 css/js 파일을 호출해야 default_layout.html 파일에서 header에 있는 jquery를 
+		로드한 후에 jquery로 작성된 js를 문제 없이 실행할 수 있다. 
+		====================================================================
+	-->
+	
+	</head>
+	
+	<!-- layout.html에 정의한 main page 부분 -->
+	<body layout:fragment="body">
+		<h1>시스템 오류입니다. 새로고침 후 서비스를 이용해 주세요.</h1>		
+	</body>
+</html>

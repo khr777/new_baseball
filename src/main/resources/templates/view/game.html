@@ -19,6 +19,7 @@
 	
 	<!-- layout.html에 정의한 main page 부분 -->
 	<body layout:fragment="body">
+		<script src="/static/js/game.js"></script>
 		<!-- code -->
 		
 		<div class="game-contents-box default-contents wrap">
@@ -33,7 +34,8 @@
 						<div class="current-round"><span>3</span> round</div>
 					</div>
 					<div class="round-box-flex round-box-2">
-						<div class="entered-number entered-number-1">2</div>
+						<!-- <div class="entered-number active entered-number-1">2</div> -->
+						<div class="entered-number entered-number-1"></div>
 						<div class="entered-number entered-number-2"></div>
 						<div class="entered-number entered-number-3"></div>
 					</div>
@@ -47,14 +49,14 @@
 					</div>
 					<div class="game-nickname-box">
 						<div class="nickname-title">NickName</div>
-						<div class="user-nickname">yongja_nunna</div>
+						<div th:text="${session.loginMember.nickName}" class="user-nickname">nickName</div>
 					</div>
 				</div>
 				
 			</div>
 			<div class="game-box">
-				<div class="total-round-5">
-					<div class="round-1 round-box">
+				<div class="total-round-5 total-round">
+					<div class="round-sample round-box" style="display: none;">
 						<div class="round game-el">
 							<span class="el-round">1 round</span>
 						</div>
@@ -72,7 +74,7 @@
 							<span  class="el-matching" name="ball">1B</span>
 						</div>
 					</div>
-					<div class="round-2 round-box">
+					<div class="round-2-1 round-box-1" style="display: none;">
 						<div class="round game-el">
 							<span class="el-round">2 round</span>
 						</div>
@@ -89,7 +91,7 @@
 							<span class="el-matching" name="ball">2B</span>
 						</div>
 					</div>
-					<div class="round-3 round-box">
+					<div class="round-3-1 round-box-1" style="display: none;">
 						<div class="round game-el">
 							<span class="el-round">3 round</span>
 						</div>
@@ -106,7 +108,7 @@
 							<span class="el-matching" name="out">out</span>
 						</div>
 					</div>
-					<div class="round-4 round-box">
+					<div class="round-4-1 round-box-1" style="display: none;">
 						<div class="round game-el">
 							<span class="el-round">4 round</span>
 						</div>
@@ -124,7 +126,7 @@
 							<span class="el-matching" name="ball">1B</span>
 						</div>
 					</div>
-					<div class="round-5 round-box">
+					<div class="round-5-1 round-box-1" style="display: none;">
 						<div class="round game-el">
 							<span class="el-round">5 round</span>
 						</div>
@@ -153,8 +155,8 @@
 					<span class="btn number">8</span>
 					<span class="btn number">9</span>
 					<span class="btn number">0</span>
-					<span class="btn">Del</span>
-					<span class="btn">Ent</span>
+					<span class="btn delete-btn ">Del</span>
+					<span class="btn enter-btn">Ent</span>
 				</div>
 				
 				<div id="success-modal" class="modal">

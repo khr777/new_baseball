@@ -23,9 +23,15 @@
 			<!-- 파라미터로 넘겨서 사용 가능한 예시 -->
 			<!-- <th:block th:replace="layout/test_header :: headerFragment('Header')"></th:block> -->
 			<div class="h-100-p">
-				<div class="nickname-box m-t-40">
-					<div class="nickname-label nickname-el"><span>NickName</span></div>
-					<div class="nickname nickname-el"><span>yongja_nunna</span></div>
+				<div  class="loginer-nickname-box m-t-40">
+					<div th:if="${session.loginMember != null }">
+						<div  class="nickname-label nickname-el"><span>NickName</span></div>
+						<div  class="nickname nickname-el"><span th:text="${session.loginMember.nickName}" >NickName</span></div>
+					</div>
+					<div th:unless="${session.loginMember != null }">
+						<div class="nickname-label nickname-el"><span></span></div>
+						<div class="nickname nickname-el not-login"><span>-</span></div>
+					</div>
 				</div>
 				<div>
 					

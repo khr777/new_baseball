@@ -14,6 +14,12 @@ public class WebMvcConfig implements WebMvcConfigurer {
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(new LoginInterceptor())
 				.addPathPatterns("/**") // 인터셉터를 어떤 URL 패턴에 적용할지 설정
-				.excludePathPatterns("/static/**");
+				.excludePathPatterns("/static/**")
+				.excludePathPatterns("/baseball/member/login")
+				.excludePathPatterns("/baseball/member/login-check")
+				.excludePathPatterns("/baseball/member/join")
+				.excludePathPatterns("/baseball/member/join-put")
+				.excludePathPatterns("/baseball/game_rule")
+				.excludePathPatterns("/baseball/main");
 	}
 }

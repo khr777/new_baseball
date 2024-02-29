@@ -6,9 +6,12 @@ import org.springframework.stereotype.Service;
 import com.worimodoo.baseball.dao.MemberDao;
 import com.worimodoo.baseball.dto.Member;
 import com.worimodoo.baseball.dto.TestDto;
+import com.worimodoo.baseball.util.PathCodeInterface;
+import com.worimodoo.baseball.util.ReturnCodeInterface;
+import com.worimodoo.baseball.util.ReturnMessageInterface;
 
 @Service
-public class MemberService {
+public class MemberService implements ReturnCodeInterface, PathCodeInterface {
 	
 	@Autowired
 	private MemberDao memberDao;
@@ -19,5 +22,29 @@ public class MemberService {
 
 	public int getNickNameOverlapCount(String nickName) {
 		return memberDao.getNickNameOverlapCount(nickName);
+	}
+
+	public Member loginInfoCheck(Member member) {
+		
+		int validNickNameCheck = getNickNameOverlapCount(member.getNickName()); 
+		
+		if ( validNickNameCheck == 0 ) {
+			member.setResult(RETURN_EMPTY_OR_NULL);
+			member.setResultMsg("존재하지 않는 닉네임 입니다.");
+			return member;
+		}
+		
+		Member returnMember = memberDao.loginInfoCheck(member); 
+		
+		if ( returnMember != null ) {
+			member.setResultMsg("베이스볼 게임을 시작할 준비가 되었습니다!");
+			member.setResult(RETURN_SUCCESS);
+			member.setView(PATH_MAIN);
+		} else {
+			member.setResult(RETURN_EMPTY_OR_NULL);
+			member.setResultMsg("패스워드를 다시 입력해 주세요.");
+		}
+		
+		return member; 
 	} 
 }

@@ -9,7 +9,7 @@
 	<!-- ============================================ -->
 	<title>BASEBALL CHALLENGE</title>
 	<link href="/static/css/join_login_common.css"  th:href="@{/static/css/join_login_common.css}" rel="stylesheet" />
-	
+	<script src="/static/js/login.js" th:src="@{/static/js/login.js}" ></script>
 	
 	<!-- 필요하다면 개별 파일에 사용될 css/js 선언  -->
 	<style>
@@ -38,29 +38,38 @@
 		<!-- code -->
 		
 		<div class="login-contents-box default-contents wrap">
-		
-			<div class="login-box">
-				<div class="login-title-box">
-					<div class="login-title">Welcome Back!</div>
+			<form id="login-form" action="/baseball/member/login-check" method="POST" name="login-form" onsubmit="return false;" >
+				<div class="login-box">
+					
+					<div class="login-title-box">
+						<div class="login-title">Welcome Back!</div>
+					</div>
+					<div class="login-info-box">
+						
+						<label class="login-input" for="login-id">
+							<span>NickName</span>
+							<input id="login-id" type="text" name="nickName" autofocus="autofocus" />
+						</label>
+						<label class="login-input" for="login-pw">
+							<span>Password</span>
+							<input id="login-pw" type="password" name="passWord"/>
+						</label>
+						
+					</div>
+					<div class="login-btn-box">
+						<button type="submit" class="login-btn" onclick="loginSubmit();">login</button>
+					</div>
+					<div class="other-btn-box">
+						<a href="/baseball/member/join">
+							<span class="move-join-btn" >join</span>
+						</a>
+						<a href="">
+							<span class="move-find-info-btn">find info</span>
+						</a>
+					</div>
+					
 				</div>
-				<div class="login-info-box">
-					<label class="login-input" for="login-id">
-						<span>NickName</span>
-						<input id="login-id" type="text" />
-					</label>
-					<label class="login-input" for="login-pw">
-						<span>Password</span>
-						<input id="login-pw" type="password" />
-					</label>
-				</div>
-				<div class="login-btn-box">
-					<button type="submit" class="login-btn">login</button>
-				</div>
-				<div class="other-btn-box">
-					<span class="move-join-btn">join</span>
-					<span class="move-find-info-btn">find info</span>
-				</div>
-			</div>
+			</form>
 		</div>
 		
 		

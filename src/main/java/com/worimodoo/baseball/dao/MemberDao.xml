@@ -13,6 +13,15 @@
 		WHERE nickname = #{nickName};
 	</select>
 	
+	<select id="loginInfoCheck" resultType="Member">
+		SELECT * 
+		FROM member 
+		WHERE nickname = #{nickName}
+		AND password = #{passWord} 
+	</select>
+	
+	
+	
 	
 	<resultMap type="Member" id="member">
 		<id property="id" column="id" />

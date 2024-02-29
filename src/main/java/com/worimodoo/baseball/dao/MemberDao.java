@@ -11,4 +11,6 @@ public interface MemberDao {
 
 	int getNickNameOverlapCount(String nickName);
 
+	Member loginInfoCheck(Member member);
+
 }
